@@ -13,7 +13,7 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <h2>The ship is safest when it's in port, but that's not what whips were built for.</h2>
+     <h3>The ship is safest when it's in port, but that's not what whips were built for.</h3>
      <br>
      <p>- Paulo Coelho</p>
   header_text_feature_image:
