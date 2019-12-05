@@ -5,17 +5,15 @@ url: "https://hyunlangban.github.io/"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: "초보개발자의 한걸음씩 나아가기"
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "비전공자 초보 개발자의 개발블로그" # used by search engines
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+     <p>"부족하지만 한걸음씩 나아가고 있는 초보 개발자입니다."</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
@@ -29,7 +27,7 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: "https://github.com/HyunlangBan"
+  github: https://github.com/HyunlangBan
   gitter:
   google_plus:
   instagram:
