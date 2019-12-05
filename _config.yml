@@ -13,7 +13,9 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <p>"부족하지만 한걸음씩 나아가고 있는 초보 개발자입니다."</p>
+     <p>The ship is safest when it's in port, but that's not what whips were built for.</p>
+     <br>
+     <p>- Paulo Coelho</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
@@ -27,7 +29,7 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: https://github.com/HyunlangBan
+  github: "https://github.com/HyunlangBan"
   gitter:
   google_plus:
   instagram:
