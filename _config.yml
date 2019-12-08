@@ -14,7 +14,7 @@ theme_settings:
   # Header and footer text
   header_text: >
      <h3>The ship is safest when it's in port, but that's not what ships were built for.</h3>
-     <h4>배는 항구에 정박해 있을 때 가장 안전하다. 하지만 그것이 배가 만들어진 이유는 아니다.</h4>
+     배는 항구에 정박해 있을 때 가장 안전하다. 하지만 그것이 배가 만들어진 이유는 아니다.
      <br>
      <p>- Paulo Coelho, The Pilgrimage</p>
   header_text_feature_image:
