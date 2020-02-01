@@ -36,7 +36,7 @@ Jekyll도 bundler도 다 처음보는데 다 생각대로 안따라줘서 블로
 
 
 그래서 다시 다 접어두고 [다른 글](https://blog.chulgil.me/how-to-make-blog-using-github-4)을 참고했다. 하지만 bundler를 피해갈 순 없었다.(엉엉)<br>
-그래서 다시 열심히 검색해보니 [윈도우즈에서의 Jekyll](https://blog.chulgil.me/how-to-make-blog-using-github-4/)을 발견했고 많은 도움을 받았다.<br><br>
+그래서 다시 열심히 검색해보니 [윈도우즈에서의 Jekyll](https://jekyllrb-ko.github.io/docs/windows/)을 발견했고 많은 도움을 받았다.<br><br>
 
 여기서 설명하는대로 Ruby를 설치했더니 bundler도 설치할 수 있었다!!<br>
 나도 그냥 해보면서 되는대로 해결했기 때문에 제대로 잘 한 건지는 모르겠지만 결국 내 블로그는 만들어졌으니 잘 해결 된 것 같다:)<br><br>
