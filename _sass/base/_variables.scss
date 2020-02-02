@@ -4,9 +4,9 @@ $font-family-headings: 'Source Sans Pro', Helvetica, Arial, sans-serif !default;
 $font-size: 1.10em !default;
 
 // Padding
-$padding-large: 20% !default;
-$padding-small: 5% !default;
-$padding-x-small: 3% !default;
+$padding-large: 30% !default;
+$padding-small: 20% !default;
+$padding-x-small: 10% !default;
 
 // Brand colours
 $brand-color: #fff !default;
@@ -32,6 +32,6 @@ $feature-image-text-color: #fff !default;
 $feature-image-size: cover !default; // options include "cover", "contain", "auto"
 
 // Header description box
-$header-desc-background-color: #1ABC9C !default;
+$header-desc-background-color: #383838 !default;
 $header-desc-text-color: #FFF !default;
 $header-desc-link-color: #02453D !default;
