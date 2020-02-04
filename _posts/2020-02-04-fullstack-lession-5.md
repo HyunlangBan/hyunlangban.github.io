@@ -24,6 +24,7 @@ tag: [fullstack, udacity]
 ### Create a Dummy ToDo App
   
 - app.py
+
 ```python
 from flask import Flask, render_template
   
@@ -42,6 +43,7 @@ if name == '__main__':
   app.run(debug=True)
 ```
 
+
 - /templates/index.html
   - Flask는 모든 템플릿을 현재 프로젝트 디렉토리 내의 templates폴더에서 관리함
 ```html
@@ -52,7 +54,7 @@ if name == '__main__':
 
     <body>
         <ul>
-            {% for d in data %}
+            {% for d in data %} ## Jinja의 for loop
             <li>{{ d.description }}</li>
             {% endfor %}
         </ul>
