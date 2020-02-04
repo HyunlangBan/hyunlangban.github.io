@@ -59,3 +59,6 @@ if name == '__main__':
    </body>
 </html>
 ```
+
+### Result
+![todoapp_result](/img/todoapp_result.png)
