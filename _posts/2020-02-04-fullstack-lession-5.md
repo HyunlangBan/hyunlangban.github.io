@@ -46,17 +46,17 @@ if name == '__main__':
   - Flask는 모든 템플릿을 현재 프로젝트 디렉토리 내의 templates폴더에서 관리함
 ```html
 <html>
-   <head>
-      <title>Todo App</title>
-   </haad>
-   
-   <body>
-      <ul>
-         {% for d in data %}  ## Jinja for loop
-         <li>{{ d.description }}</li>
-         { %endfor% }
-      </ul>
-   </body>
+    <head>
+        <title>Todo App</title>
+    </head>
+
+    <body>
+        <ul>
+            {% for d in data %}
+            <li>{{ d.description }}</li>
+            {% endfor %}
+        </ul>
+    </body>
 </html>
 ```
 
