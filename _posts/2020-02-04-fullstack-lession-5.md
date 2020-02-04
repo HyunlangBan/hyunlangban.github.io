@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bulid a CRUD App with SQLALchemy
-tag: fullstack, udacity
+tag: [fullstack, udacity]
 ---
 
 ### Introduction
