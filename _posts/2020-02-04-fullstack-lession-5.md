@@ -42,7 +42,7 @@ app = Flask(__name___) ## application 생성시 이름이 현재 python 파일�
 if name == '__main__':
   app.run(debug=True)
 ```
-
+<br>
 
 - /templates/index.html
   - Flask는 모든 템플릿을 현재 프로젝트 디렉토리 내의 templates폴더에서 관리함
@@ -62,6 +62,8 @@ if name == '__main__':
     </body>
 </html>
 ```
+
+<br>
 
 ### Result
 ![todoapp_result](/img/todoapp_result.png)
