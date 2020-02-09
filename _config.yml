@@ -68,7 +68,7 @@ theme_settings:
   google_fonts: "Noto+Sans+KR:400,700,700italic,400italic"
 
   # Post navigation
-  post_navigation: true
+  post_navigation: false
 
 # PAGINATION
 paginate: 5
