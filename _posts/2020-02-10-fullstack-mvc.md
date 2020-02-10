@@ -46,7 +46,7 @@ index method는 contoller이며 사용자가 다음에 무엇을 봐야할지, m
 ### Handling User Input
 우리는 데이터베이스에 있는 값을 가져올 뿐만 아니라 view에서 사용자 지정값을 받아서 어떤것을 추가, 업데이트하거나 삭제해야한다.
 
-#### Craete To-Do item functionality
+#### Craete To-Do Item Functionality
 - On the iew: html에서 userinput을 받을 수 있는 text field와 같은 form과 값을 submit할 수 있는 버튼을 생성한다.(Accept user input)
 - On the controller: user input을 받고 model을 manipulate한다.(Retrieve user input)
 - On the model: 데이터베이스에서 레코드를 추가하고 새롭게 생성된 to-do item을 컨트롤러에게 return한다..(Manipulate models using user input(creating a record))
