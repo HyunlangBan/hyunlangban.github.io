@@ -1,9 +1,10 @@
 .entry-meta-inline-list{
-  @extend %padding-regular;
+  //@extend %padding-regular;
   list-style-type: none;
   margin-left: 25px;
 }
 .tag-li{
+  float: left
   margin: 5px 5px;
   background-color: #333333;
 }
