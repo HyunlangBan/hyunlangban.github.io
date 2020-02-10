@@ -1,6 +1,7 @@
 .entry-meta-inline-list{
   @extend %padding-regular;
   list-style-type: none;
+  margin: 0;
 }
 .tag-li{
   float: left;
