@@ -2,14 +2,15 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-    .tag-li{
-      float: left;
-        .tag {
-          display: block;
-          text-align: center;
-          padding: 16px;
-    }
-  }
+}
+.tag-li{
+  float: left;
+}
+ .tag {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
 }
 .tag-title {
   color: $tags-color;
