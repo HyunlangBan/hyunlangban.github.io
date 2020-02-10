@@ -98,4 +98,8 @@ if __name__ == '__main__':
 
 데이터베이스상의 데이터에 변화가 발생하면 사용자의 veiw에도 동일한 변화가 발생한다 --> MVC pattern 
 
+#### Reset database anytime
+```
+dropdb todoapp && createdb todoapp
+```
   
