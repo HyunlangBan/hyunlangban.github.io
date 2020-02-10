@@ -2,12 +2,16 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+    .tag-li{
+      float: left;
+        .tag {
+          display: block;
+          text-align: center;
+          padding: 16px;
+    }
+  }
 }
-.tag {
-  display: block;
-  text-align: center;
-  padding: 16px;
-}
+
 .tag-title {
   color: $tags-color;
   margin-bottom: 0;
