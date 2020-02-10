@@ -5,12 +5,14 @@
 }
 .tag-li{
   float: left;
+  margin: 5px 5px;
+  background-color: #333333;
 }
  .tag {
   display: block;
+  color: white;
   text-align: center;
-  padding: 16px;
-  text-decoration: none;
+  padding: 10px;
 }
 .tag-title {
   color: $tags-color;
