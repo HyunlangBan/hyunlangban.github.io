@@ -1,4 +1,5 @@
 .entry-meta-inline-list{
+  @extend %padding-regular;
   list-style-type: none;
   margin: 0;
   padding: 0;
