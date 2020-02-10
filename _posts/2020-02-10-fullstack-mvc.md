@@ -34,7 +34,7 @@ cotorller가 직접적으로 veiw를 결정할 때를 제외하고는 model에�
     return render_template('index.html', data = Todo.query.all())
 ```
 
-index method는 contorller이며 사용자가 다음에 무엇을 봐야할지, model이 어떤 interaction을 할지 결정한다:  `SELECT * FROM todos`를 한 후 
+index method는 contoller이며 사용자가 다음에 무엇을 봐야할지, model이 어떤 interaction을 할지 결정한다:  `SELECT * FROM todos`를 한 후 
 그 데이터를 나타내기 위해서 `index.html` template을 사용해야한다고 view에게 말한다.
 
 
