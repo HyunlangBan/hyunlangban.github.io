@@ -49,7 +49,7 @@ index method는 contoller이며 사용자가 다음에 무엇을 봐야할지, m
 #### Craete To-Do Item Functionality
 - On the view: html에서 userinput을 받을 수 있는 text field와 같은 form과 값을 submit할 수 있는 버튼을 생성한다.(Accept user input)
 - On the controller: user input을 받고 model을 manipulate한다.(Retrieve user input)
-- On the model: 데이터베이스에서 레코드를 추가하고 새롭게 생성된 to-do item을 컨트롤러에게 return한다..(Manipulate models using user input(creating a record))
+- On the model: 데이터베이스에서 레코드를 추가하고 새롭게 생성된 to-do item을 컨트롤러에게 return한다.(Manipulate models using user input(creating a record))
 - On the controller: 새롭게 생성된 to-do tiem을 받고 그 값으로 어떻게 view를 update할지 결정한다.
 
 
