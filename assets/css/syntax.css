@@ -1,6 +1,5 @@
-.highlight,pre.highlight{
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serife;
-  background:#222222;color:#aab1bf;
+.highlight, pre.highlight{
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .highlight table td { padding: 5px; }
