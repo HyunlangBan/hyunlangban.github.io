@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting User Data in Flask
-tag: [fullstack, udacity]
+tag: [fullstack]
 ---
 
 ### Getting User Data in Flask 
@@ -89,3 +89,84 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
    - URL parameters에서 데이터를 얻는 방법: `request.args.get('field')`
  - smaller form submission에 더 이상적이다.
 
+<br>
+
+### In Flask
+POST 메소드를 사용하여 `/create` route로 데이터를 전송할 때 Flask에서는 어떻게 처리해아할까?
+```
+@app.route('/create', method=['POST']  # route handler
+def create():
+  value1 = request.form.get('field1')  # 두 방법 모두 값을 받아올 수 있음
+  value2 = request.from['field2']
+  
+  // do something with the user data ... # 받아온 값을 데이터 베이스에 추가해야함
+  
+  return render_template('index.html') # 결과를 나타낼 view
+```
+
+#### Developing our view
+이전에 만들었던 todo app이 사용자 값을 받아서 데이터베이스에 레코드를 추가할 수 있도록 변경해보자.
+```html
+<html>
+   <head>
+      <title>Todo App</title>
+   </head>
+   <body>
+   <!-- 추가된 내용 -->  
+      <form method="post" action="/todos/craete">  <!-- action은 보통 '/resource의 이름/수행할 action'으로 짓는다 -->
+         <input type="text" name="description" />
+         <input type="sumbit" value="Create" />
+      </form>
+   <!----------------->
+      <ul>
+         {% for d in data %}
+         <li>{{ d.description }}</li>
+         {% endfor %}
+      </ul>
+   </body>
+<html>
+```
+
+#### Developing the controller
+```python
+# app.py
+
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__) 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:gus123@localhost:5432/todoapp'
+db = SQLAlchemy(app) 
+
+class Todo(db.Model):
+    __tablename__ = 'todos'
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(), nullable=False)
+
+    def __repr__(self):
+        return f'<Todo {self.id} {self.description}>'
+
+db.create_all()
+
+#--------------------------------------------------------
+@app.route('/todos/create', methods=['POST'])
+def create_todo():
+    description = request.form.get('description', '')
+    todo = Todo(description=description)
+    db.session.add(todo)
+    db.session.commit()
+    return redirect(url_for('index')) # index route handler
+    
+# '/todos/create' route로 description의 value를 받아온다.
+# 위에서 선언한 Todo의 description에 해당 값을 추가한다.
+# commit으로 데이터베이스에 반영시킨다.
+# 새롭게 바뀐 index 페이지를 redirect한다.
+#--------------------------------------------------------
+
+@app.route('/')
+def index():
+    return render_template('index.html', data = Todo.query.all())
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
