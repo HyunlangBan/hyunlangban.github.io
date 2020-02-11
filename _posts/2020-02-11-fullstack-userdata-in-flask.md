@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Getting User Data in Flask
-tag: fullstack
+tag: [fullstack, udacity]
 ---
 
-Getting User Data in Flask 
+### Getting User Data in Flask 
 View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 - URL query parameters
 - Forms
