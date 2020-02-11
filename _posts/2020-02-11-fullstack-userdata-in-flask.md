@@ -172,4 +172,6 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-View에 내용을 입력하면 Controller가 값을 받아서 Model을 조정하고 그 결과를 view가 반영할 수 있도록 한다.(MVC flow)
+<br>
+
+View에 내용을 입력하면 Controller가 값을 받아서 Model을 조정하고 그 결과를 view가 반영할 수 있도록 한다.**(MVC flow)**
