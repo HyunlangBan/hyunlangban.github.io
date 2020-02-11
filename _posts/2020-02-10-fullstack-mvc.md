@@ -52,7 +52,34 @@ index method는 contoller이며 사용자가 다음에 무엇을 봐야할지, m
 - On the model: 데이터베이스에서 레코드를 추가하고 새롭게 생성된 to-do item을 컨트롤러에게 return한다.(Manipulate models using user input(creating a record))
 - On the controller: 새롭게 생성된 to-do tiem을 받고 그 값으로 어떻게 view를 update할지 결정한다.
 
+<br>
 
+### Getting User Data in Flask - Part 1
+View에서 Controller로 user data를 가져오는 방법은 3가지이다.
+- URL query parameters
+- Forms
+- JSON
 
+#### URL query parameters
+- URL query parameters는 key-value의 짝이 URL과 물음표 뒤에 붙는다.
+   - E.g.`www.example.com/foo?field1=value1`
+- Flask는 `Requests` object에 있는 `args` object를 제공한다.
+   - `value1 = request.args.get('field1')
+- URL query parameters는 빠르게 정보를 가져오는 방법 중 하나이지만 받아오는 정보의 양이 많을 때는 response body를 쓰는 것이 더 합리적이다.
+#### Form data
+- `request.form.get('<name>')`은 HTML에서 `name` attribute에 따라서 form에 들어간 값들을 읽어온다.
+  - E.g.`username = request.form.get('username')`
 
+#### Note: defaults
+- `request.args.get`, `request.form.get`은 모두 optional second parameter를 가질 수 있다.
+  - `request.args.get('foo', 'my default')`는 result가 비어있을 때 기본 값으로 `my default`를 가진다.
+
+#### JSON
+- 위의 방법보다 더 현대적인 방법은 JSON의 response body를 사용하는 것이다.
+- `requset.data`는 JSON을 string으로 가져온다(retrieves). 그리고 `json.loads`를 호출해서 `request.data` string을 파이썬의 lists나 dictionaries로 변환한다.
+- data type이 `application/json`일때
+   ```
+   data_string = request.data
+   data_dictionary = json.loads(data_string)
+   ```
 
