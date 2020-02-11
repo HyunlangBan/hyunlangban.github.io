@@ -76,7 +76,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 
 #### JSON
 - 위의 방법보다 더 현대적인 방법은 JSON의 response body를 사용하는 것이다.
-- `requset.data`는 JSON을 string으로 가져온다(retrieves). 그리고 `json.loads`를 호출해서 `request.data` string을 파이썬의 lists나 dictionaries로 변환한다.
+- `request.data`는 JSON을 string으로 가져온다(retrieves). 그리고 `json.loads`를 호출해서 `request.data` string을 파이썬의 lists나 dictionaries로 변환한다.
 - data type이 `application/json`일때
    ```
    data_string = request.data
