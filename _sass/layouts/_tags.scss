@@ -1,5 +1,5 @@
 .entry-meta-inline-list{
-  padding: 5px;
+  @extend %padding-small;
   margin: 0;
   list-style-type: none;
   min-width: 730px;
