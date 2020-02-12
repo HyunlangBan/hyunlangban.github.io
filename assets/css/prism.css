@@ -17,7 +17,7 @@ pre[class*="language-"] {
 	white-space: pre-wrap;
 	word-spacing: normal;
 	word-break: normal;
-	word-wrap: break-word;
+	word-wrap: normal;
 	line-height: 1.5;
 
 	-moz-tab-size: 4;
@@ -66,8 +66,7 @@ pre[class*="language-"] {
 	padding: .1em;
 	font-size: 0.9em;
 	border-radius: .3em;
-	white-space: normal;
-	background: #f5f2f0;
+	background-color: #f5f2f0;
 }
 
 .token.comment,
