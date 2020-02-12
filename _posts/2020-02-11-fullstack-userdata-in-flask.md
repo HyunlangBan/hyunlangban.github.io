@@ -106,6 +106,8 @@ def create():
   return render_template('index.html') # 결과를 나타낼 view
 ```
 
+<br>
+
 #### Developing our view
 이전에 만들었던 todo app이 사용자 값을 받아서 데이터베이스에 레코드를 추가할 수 있도록 변경해보자.
 ```html
@@ -128,6 +130,8 @@ def create():
    </body>
 <html>
 ```
+
+<br>
 
 #### Developing the controller
 ```python
