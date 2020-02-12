@@ -27,6 +27,9 @@ xhttp.send();  // #4
 >  - async: true (asynchronous) or false (synchronous)
 >- send():	Sends the request to the server (used for GET)
 >- send(string):	Sends the request to the server (used for POST)
+
+<br>
+
 - #1. XMLHttpRequest 객체 생성 <br>
 - #2. id가 description인 form에 입력된 value값을 description에 할당 <br>
    (DOM에서 request와 함께 보낼 data를 가져온다.) <br>
