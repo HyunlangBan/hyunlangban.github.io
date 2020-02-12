@@ -55,9 +55,9 @@ if name == '__main__':
     </head>
     <body>
         <ul>
-        <!--{% for d in data %} 
-            <li>{{ d.description }}</li>
-            {% endfor %}-->
+          {% for d in data %} 
+          <li>{{ d.description }}</li>
+          {% endfor %}
         </ul>
     </body>
 </html>
