@@ -83,7 +83,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 #### On a GET method
 ```html
 <form action="/create" method="get">
-...
+<!--이하 동일-->
 ```
 - GET request는 URL뒤에 form의 데이터가 합쳐진 URL parameters로 전송된다.
   - `/create?field1=value&field2=value2`
