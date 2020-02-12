@@ -9,7 +9,7 @@ tag: fullstack
 - Async data requests는 서버에게 보내졌다가 페이지 새로고침 없이 클라이언트에게 되돌아 온다.
 - Async requests(AJAX requests)는 다음 두 메소드 중 하나를 사용한다.
   - XMLHttpRequest
-  - Fetch (modern way)
+  - **Fetch (modern way)**
 - [더 자세한 내용 참고](https://coding-factory.tistory.com/143)
 
 ### Using `XMLHttpRequest`
