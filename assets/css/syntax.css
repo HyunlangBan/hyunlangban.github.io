@@ -1,5 +1,5 @@
 .highlight table td { padding: 10px; }
-.highlight table pre { margin: 10px; }
+.highlight table pre { margin: 0px; padding: 10px; }
 .highlight, .highlight .w {
   font-family: 'Source Sans Pro', sans-serif;
   color: #d0d0d0;
