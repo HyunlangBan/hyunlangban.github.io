@@ -1,5 +1,19 @@
-Pre,code{ font-family: Source Code Pro; padding: 5px;}
-
+code, tt{ 
+  padding: 3px 5px; 
+  font-family: Source Code Pro;
+  backround: #d3d3d3;
+  margin: 0 5px 0 5px;
+  border-radius: 5px;
+  fonr-weight: 400;
+}
+pre{
+  margin: 0 0 1.75em 0;
+  padding: 5px 10px;
+  font-family: Source Code Pro;
+  code{
+    margin: 0 0 0 -5px
+  }
+}
 .highlight table td { padding: 7px; }
 .highlight table pre { margin: 0; }
 .highlight .cm {
