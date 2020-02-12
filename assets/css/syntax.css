@@ -6,7 +6,7 @@ Pre, code{
 code{
   backround-color: #d3d3d3;
 }
-.highlight table td { padding: 7px; }
+.highlight table td { padding: 0; }
 .highlight table pre { margin: 0; }
 .highlight .cm {
   color: #999988;
