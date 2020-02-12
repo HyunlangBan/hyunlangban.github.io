@@ -37,8 +37,8 @@ xhttp.send();  // #4
 <br>
 
 서버에서 요청 처리가 끝나면..<br>
-- 동기식: the server dictates how the view should then uptake. <br>
-- 비동기식: It's on the client side that you reacts to the server and you figure out how to update the DOM that is already loaded on the client based on the response that you get.
+- 동기: the server dictates how the view should then uptake. <br>
+- 비동기: It's on the client side that you reacts to the server and you figure out how to update the DOM that is already loaded on the client based on the response that you get.
 
 #### Server Response - XMLHttpRequest on success
 ```javascript
@@ -70,4 +70,4 @@ fetch('/my/request', {
 ```
 - `fetch`는 request를 더 쉽게 보낼 수 있도록 해준다.
 - request와 관련된 headers, body, method와 같은 파라메터를 가진다.
-
+- `fetch(<url-route>, <object of request parametsers>)`
