@@ -52,7 +52,6 @@ if name == '__main__':
     <head>
         <title>Todo App</title>
     </head>
-
     <body>
         <ul>
             {% for d in data %} ## Jinja의 for loop
