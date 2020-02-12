@@ -34,3 +34,6 @@ title: syntax test
 a = "Hello, World"
 print(a)
 ```
+
+- inline code block<br>
+`hello`, `world`
