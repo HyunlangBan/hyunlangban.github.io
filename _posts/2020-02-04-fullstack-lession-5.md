@@ -48,7 +48,7 @@ if name == '__main__':
   - Flask는 모든 템플릿을 현재 프로젝트 디렉토리 내의 templates폴더에서 관리함
   - 데이터를 받아오기위해 jinja 이용<br>
 
-```html
+```django
 <html>
     <head>
         <title>Todo App</title>
