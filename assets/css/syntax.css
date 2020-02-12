@@ -1,15 +1,9 @@
-.code .tt{ 
-  padding: 3px 5px; 
-  backround-color: #d3d3d3;
-  margin: 0 5px 0 5px;
-  border-radius: 5px;
-  fonr-weight: 400;
-}
-.pre .code{
+Pre, code{
   margin: 0 0 1.75em 0;
   padding: 5px 10px;
   font-family: Source Code Pro;
-  margin: 0 0 0 -5px
+  margin: 0 0 0 -5px;
+  backround-color: #d3d3d3;
 }
 .highlight table td { padding: 7px; }
 .highlight table pre { margin: 0; }
