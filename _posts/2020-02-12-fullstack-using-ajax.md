@@ -56,4 +56,18 @@ xhttp.onreadystagechange = function() {
 >**When `readyState` is 4 and status is 200, the response is ready.**
 
 
+### Using `Fetch`
+```
+fetch('/my/request', {
+  method: 'POST',
+  body: JSON.stringity({
+    'description': 'some description here'
+  }),
+  headers: {
+    'Content-Type': 'application/json'    // To server knows to parse it as JSON
+  }
+});
+```
+- `fetch`는 request를 더 쉽게 보낼 수 있도록 해준다.
+- request와 관련된 headers, body, method와 같은 파라메터를 가진다.
 
