@@ -47,23 +47,21 @@ if name == '__main__':
 - /templates/index.html
   - Flask는 모든 템플릿을 현재 프로젝트 디렉토리 내의 templates폴더에서 관리함
   - 데이터를 받아오기위해 jinja 이용<br>
-  
-<pre>
-<code>
+
+```html
 <html>
     <head>
         <title>Todo App</title>
     </head>
     <body>
         <ul>
-          {% for d in data %} 
-          <li>{{ d.description }}</li>
-          {% endfor %}
+            {% for d in data %}
+            <li>{{ d.description }}</li>
+            {% endfor %}
         </ul>
     </body>
 </html>
-</code>
-</pre>
+```
 
 <br>
 
