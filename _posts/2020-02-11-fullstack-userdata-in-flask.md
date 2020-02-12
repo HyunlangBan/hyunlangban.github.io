@@ -56,6 +56,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 <br>
 
 ### Form Methods `POST` vs `GET`
+
 #### On a POST method
 ```
 <form action="/create" method="post">
@@ -75,7 +76,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 - Submit 버튼을 누르면 HTTP POST request를 `/create` route로 request body와 함께 전송한다.
   - Content-Type: application/x-www-form-urlencoded
   - Request Body: `field1=value1&field2=value2`
-  - key-value 짝들이 &으로 붙게된다. Flask는 이 값들을 구분할 수 있으며 name attribute에 맞는 value를 돌려준다.--> `request.form.get('username')`
+  - key-value 짝들이 &으로 붙게된다. Flask는 이 값들을 구분할 수 있으며 name attribute에 맞는 value를 돌려준다: `request.form.get('username')`
 - POSTs는 더 긴 form의 제출에 적합하다. URL query parameters는 request body에 비해 더 길어질 수 있기 때문이다(max 2048 characters).
 - forms은 POST와 GET request만으로 전송될 수 있다.
  
@@ -83,7 +84,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
  #### On a GET method
  ```
  <form action="/create" method="get">
- ....
+ ...
  ```
  - GET request는 URL뒤에 form의 데이터가 합쳐진 URL parameters로 전송된다.
    - `/create?field1=value&field2=value2`
