@@ -49,18 +49,15 @@ if name == '__main__':
   - 데이터를 받아오기위해 jinja 이용<br>
 
 ```django
-<html>
-    <head>
-        <title>Todo App</title>
-    </head>
-    <body>
-        <ul>
-            {% for d in data %}
-            <li>{{ d.description }}</li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+...
+<body>
+  <ul>
+    {% for d in data %}
+     <li>{{ d.description }}</li>
+     {% endfor %}
+   </ul>
+</body>
+...
 ```
 
 <br>
