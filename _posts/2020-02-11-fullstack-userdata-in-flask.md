@@ -109,26 +109,7 @@ def create():
 
 #### Developing our view
 이전에 만들었던 todo app이 사용자 값을 받아서 데이터베이스에 레코드를 추가할 수 있도록 변경해보자.
-```django
-<html>
-   <head>
-      <title>Todo App</title>
-   </head>
-   <body>
-   <!-- 추가된 내용 -->  
-      <form method="post" action="/todos/craete">  <!-- action은 보통 '/resource의 이름/수행할 action'으로 짓는다 -->
-         <input type="text" name="description" />
-         <input type="sumbit" value="Create" />
-      </form>
-   <!----------------->
-      <ul>
-         {% for d in data %}
-         <li>{{ d.description }}</li>
-         {% endfor %}
-      </ul>
-   </body>
-<html>
-```
+<script src="https://gist.github.com/HyunlangBan/72791e9759fcc4c1747546415ab4a24f.js"></script>
 
 <br>
 
