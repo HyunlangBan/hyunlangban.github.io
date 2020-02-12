@@ -1,10 +1,8 @@
-Pre, code{
+code{
+  backround-color: #d3d3d3;
   padding: 10px 15px;
   font-family: Source Code Pro;
   margin: 0 0 0 -5px;
-}
-code{
-  backround-color: #d3d3d3;
 }
 .highlight table td { padding: 0; }
 .highlight table pre { margin: 0; }
