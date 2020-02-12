@@ -37,7 +37,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 
 ### Using HTML form submission to get the data
 #### Example
-```
+```html
 <form action="/create-todo" method="post">
   <div>
     <label for="name">Create a To-Do Item</label>
@@ -58,7 +58,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 ### Form Methods `POST` vs `GET`
 
 #### On a POST method
-```
+```html
 <form action="/create" method="post">
    <div>
      <label for="field1">Field 1</label>
@@ -81,7 +81,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 - forms은 POST와 GET request만으로 전송될 수 있다.
 
 #### On a GET method
-```
+```html
 <form action="/create" method="get">
 ...
 ```
@@ -94,7 +94,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 
 ### In Flask
 POST 메소드를 사용하여 `/create` route로 데이터를 전송할 때 Flask에서는 어떻게 처리해아할까?
-```
+```python
 @app.route('/create', method=['POST']  # route handler
 def create():
   value1 = request.form.get('field1')  # 두 방법 모두 값을 받아올 수 있음
