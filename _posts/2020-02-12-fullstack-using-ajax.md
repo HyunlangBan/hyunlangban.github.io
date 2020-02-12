@@ -83,3 +83,9 @@ fetch('/my/request', {
 
 - 비동기였을 때는 페이지를 redirect하면서 전체가 새로고침이 되어야했는데 동기에서는 새로운 부분(response)만 기존의 화면에서 추가되는 것을 볼 수 있다.
 - 또한 이전에는 컨트롤러가 response를 받아서 view를 결정했지만 여기서는 client side(view)에서 request를 전송하고 response를 받아서 화면에 출력하는 것까지 결정한다. 컨트롤러는 model의 수행만 명령하고 JSON data를 client로 return한다.
+
+```html
+<body>
+  <p>test. Hello world</p>
+</body>
+```
