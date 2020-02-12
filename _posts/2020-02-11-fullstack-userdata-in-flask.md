@@ -109,7 +109,7 @@ def create():
 
 #### Developing our view
 이전에 만들었던 todo app이 사용자 값을 받아서 데이터베이스에 레코드를 추가할 수 있도록 변경해보자.
-```html
+```django
 <html>
    <head>
       <title>Todo App</title>
