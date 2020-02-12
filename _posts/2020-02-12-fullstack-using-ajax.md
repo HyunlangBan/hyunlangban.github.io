@@ -14,7 +14,7 @@ tag: fullstack
 
 ### Using `XMLHttpRequest`
 #### Send a Request To a Server
-```javascript
+```js
 var xhttp = new XMLHttpRequest();  // #1
 description = document.getElementById("description").value;  // #2
 xhttp.open("GET", "/todos/create?description="+description);  // #3
@@ -40,7 +40,7 @@ xhttp.send();  // #4
 - 비동기: It's on the client side that you reacts to the server and you figure out how to update the DOM that is already loaded on the client based on the response that you get.
 
 #### Server Response - XMLHttpRequest on success
-```javascript
+```js
 xhttp.onreadystagechange = function() {
   if (this.readyState === 4 && this.status === 200) {
   // on successful response
@@ -56,7 +56,7 @@ xhttp.onreadystagechange = function() {
 
 
 ### Using `Fetch`
-```
+```js
 fetch('/my/request', {
   method: 'POST',
   body: JSON.stringity({
@@ -70,3 +70,13 @@ fetch('/my/request', {
 - `fetch`는 request를 더 쉽게 보낼 수 있도록 해준다.
 - request와 관련된 headers, body, method와 같은 파라메터를 가진다.
 - `fetch(<url-route>, <object of request parametsers>)`
+
+#### todoapp
+- View
+<script src="https://gist.github.com/HyunlangBan/3d603248ba7172acfdd8849a8c243c6d.js"></script>
+
+- Controller
+<script src="https://gist.github.com/HyunlangBan/47a67de754ae0f73ed3eb02b2a56f12a.js"></script>
+
+- 비동기였을 때는 페이지를 redirect하면서 전체가 새로고침이 되어야했는데 동기에서는 새로운 부분(response)만 기존의 화면에서 추가되는 것을 볼 수 있다.
+- 또한 이전에는 컨트롤러가 response를 받아서 view를 결정했지만 여기서는 client side(view)에서 request를 전송하고 response를 받아서 화면에 출력하는 것까지 결정한다. 컨트롤러는 model의 수행만 명령하고 JSON data를 client로 return한다.
