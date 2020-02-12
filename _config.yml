@@ -9,7 +9,7 @@ theme_settings:
   avatar: assets/img/avatar.png
   favicon: assets/computer_favicon.ico
   gravatar: # Email MD5 hash
-  description: "초보 개발자의 개발블로그" # used by search engines
+  description: "초보개발자의 " # used by search engines
 
   # Header and footer text
   header_text: >
@@ -77,6 +77,11 @@ paginate_path: "blog/page:num"
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
 sass:
   sass_dir: _sass
   style: :compressed
