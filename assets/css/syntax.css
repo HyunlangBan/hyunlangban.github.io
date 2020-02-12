@@ -1,12 +1,11 @@
-code, tt{ 
+.code .tt{ 
   padding: 3px 5px; 
-  font-family: Source Code Pro;
   backround-color: #d3d3d3;
   margin: 0 5px 0 5px;
   border-radius: 5px;
   fonr-weight: 400;
 }
-pre, code{
+.pre .code{
   margin: 0 0 1.75em 0;
   padding: 5px 10px;
   font-family: Source Code Pro;
