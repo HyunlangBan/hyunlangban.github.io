@@ -3,6 +3,7 @@ layout: post
 title: syntax test
 ---
 - html
+
 ```html
 <html>
   <head>
@@ -15,6 +16,7 @@ title: syntax test
 ```
 
 -md
+
 ```md
 <html>
   <head>
@@ -27,6 +29,7 @@ title: syntax test
 ```
 
 - python
+
 ```python
 a = "Hello, World"
 print(a)
