@@ -4,20 +4,10 @@ title: syntax test
 ---
 -html
 
-<pre>
-    <code class="language-markup">
-        <script type="prism-html-markup">
-            <html>
-                <head>
-                  <h1>test</h1>
-                </head>
-                <body>
-                  <p>Hello World</p>
-                </body>
-             </html>
-        </script>
-    </code>
-</pre>
+<script type="text/plain" class="language-markup">
+<p>Example</p>
+<p>eeeeeee</p>
+</script>
 
 
 - python
