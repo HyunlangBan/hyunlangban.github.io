@@ -3,11 +3,11 @@
   {% include head.html %}
   <body>
     {% include header.html %}
-    <!-- Prism -->
-    <script src="{{ "/assets/js/prism.js" | prepend: relative_url }}"></script>
     <div class="content">
       {{ content }}
     </div>
+    <!-- Prism -->
+    <script src="{{ "/assets/js/prism.js" | prepend: site.baseurl }}"></script>
     {% include footer.html %}
   </body>
 </html>
