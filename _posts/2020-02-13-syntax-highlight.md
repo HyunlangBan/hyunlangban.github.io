@@ -58,3 +58,5 @@ your code
 {% endhighlight %}
 ```
 
+결국은 코드블럭을 바꾸기는 했다. 배경도 어두워졌고 글꼴도 바뀌었다. 
+하지만 gem plugin 사용법을 다시 더 찾아본다음에 tomorrow night 테마를 다시 적용해보고 싶다.
