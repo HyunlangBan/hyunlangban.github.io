@@ -1,6 +1,7 @@
 ---
 layout: post
 title: syntax test
+extra_css: /assets/css/prism.css
 ---
 ```html
    <html>
