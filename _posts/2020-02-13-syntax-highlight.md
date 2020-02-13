@@ -46,6 +46,7 @@ jekyll로 블로그를 처음 만들었을 때 선택했던 테마가 [type-them
 ### 결국.....
 이 외에도 많은 삽질을 계속 하다가 결국 처음으로 되돌아왔다.
 지킬을 자유자재로 쓸 수 없는 지금의 나로서는 기본에 충실하는게 답이었다. 그냥 rouge를 쓰는 것이...
+(궁금한게 config에는 기본 설정이 `highlight: rouge`라고 써있었는데 `syntax.scss`는 pygments게 들어있다. 뭘까?)
 
 #### 최종 해결방안
 - 기본 syntax파일(`/_sass/external/syntax.scss`)에 주석으로 달려있는 [pygments-css](https://github.com/richleland/pygments-css)에서 monokai를 선택했다.
