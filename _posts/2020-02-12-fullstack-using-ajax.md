@@ -43,14 +43,14 @@ xhttp.send();  // #4
 - 비동기: It's on the client side that you reacts to the server and you figure out how to update the DOM that is already loaded on the client based on the response that you get.
 
 #### Server Response - XMLHttpRequest on success
-```js
+{% hightlight javascript %}
 xhttp.onreadystagechange = function() {
   if (this.readyState === 4 && this.status === 200) {
   // on successful response
   console.log(xhttp.responseText);
   }
 };
-```
+{% endhighlight %}
 >The `readyState` property holds the status of the `XMLHttpRequest`. <br>
 >The `onreadystatechange` property defines a function to be executed when the `readyState` changes. <br>
 >The `status` property and the `statusText` property holds the status of the `XMLHttpRequest` object. <br>
@@ -59,7 +59,7 @@ xhttp.onreadystagechange = function() {
 
 
 ### Using `Fetch`
-```js
+{% hightlight javascript %}
 fetch('/my/request', {
   method: 'POST',
   body: JSON.stringity({
@@ -69,7 +69,7 @@ fetch('/my/request', {
     'Content-Type': 'application/json'    // To server knows to parse it as JSON
   }
 });
-```
+{% endhighlight %}
 - `fetch`는 request를 더 쉽게 보낼 수 있도록 해준다.
 - request와 관련된 headers, body, method와 같은 파라메터를 가진다.
 - `fetch(<url-route>, <object of request parametsers>)`
