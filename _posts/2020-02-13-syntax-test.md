@@ -3,8 +3,9 @@ layout: post
 title: syntax test
 ---
 -html222
+```html
 <script type="prism-html-markup"> <p> example </p></script>
-
+```
 - python
 
 ```python
