@@ -2,20 +2,40 @@
 layout: post
 title: syntax test
 ---
--html111
+-html2222
+<body>
+<section id="main" class="language-javascript">
 
 <pre>
-    <code class="language-markup">
-        <script type="prism-html-markup">
-            <h1 class="foo">h1. Heading 1</h1>
-            <h2>h2. Heading 2</h2>
-            <h3>h3. Heading 3</h3>
-            <h4>h4. Heading 4</h4>
-            <h5>h5. Heading 5</h5>
-            <h6>h6. Heading 6</h6>
-        </script>
-    </code>
+
+	<code>
+
+
+		var example = {
+			foo: true,
+
+			bar: false
+		};
+
+
+	</code>
+
 </pre>
+
+</section>
+
+<script src="prism.js"></script>
+<script src="plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+<script type="text/javascript">
+// Optional
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+});
+</script>
+</body>
 
 
 - python
