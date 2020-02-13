@@ -1,10 +1,9 @@
 ---
 layout: post
 title: syntax test
-extra_css: /assets/css/prism.css
 ---
-
-<pre><code class="language-html">
+-html
+<pre><code class="language-markup">
 <html>
     <head>
       <h1>test</h1>
