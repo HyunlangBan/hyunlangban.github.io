@@ -81,8 +81,7 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: - jekyll-paginate
-- mm-jekyll-prism
+plugins: [jekyll-paginate, mm-jekyll-prism]
 exclude:
   - Gemfile
   - Gemfile.lock
