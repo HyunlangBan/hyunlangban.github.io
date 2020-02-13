@@ -37,7 +37,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 
 ### Using HTML form submission to get the data
 #### Example
-```html
+{% highlight html %}
 <form action="/create-todo" method="post">
   <div>
     <label for="name">Create a To-Do Item</label>
@@ -47,7 +47,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
     <input type="submit" id="submit" value="Create" />
   </div>
 </form>
-```
+{% endhighlight %}
 - forms는 서버에 데이터를 전송하기 위해 `action`(route의 이름)과 `method`(route method) 갖는다.
   - route method에는 post, get이 있다.
 - form control element의 이름 에트리뷰트는 `request.get(<key>)`에서 데이터를 가져올 때 key로 사용된다.
@@ -58,7 +58,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 ### Form Methods `POST` vs `GET`
 
 #### On a POST method
-```html
+{% highlight html %}
 <form action="/create" method="post">
    <div>
      <label for="field1">Field 1</label>
@@ -72,7 +72,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
      <input type="submit" id="submit" value="Create" />
    </div>
  </form>
-```
+{% endhighlight %}
 - Submit 버튼을 누르면 HTTP POST request를 `/create` route로 request body와 함께 전송한다.
   - Content-Type: application/x-www-form-urlencoded
   - Request Body: `field1=value1&field2=value2`
@@ -81,10 +81,10 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 - forms은 POST와 GET request만으로 전송될 수 있다.
 
 #### On a GET method
-```html
+{% highlight html %}
 <form action="/create" method="get">
 <!--이하 동일-->
-```
+{% endhighlight %}
 - GET request는 URL뒤에 form의 데이터가 합쳐진 URL parameters로 전송된다.
   - `/create?field1=value&field2=value2`
   - URL parameters에서 데이터를 얻는 방법: `request.args.get('field')`
@@ -94,7 +94,7 @@ View에서 Controller로 user data를 가져오는 방법은 3가지이다.
 
 ### In Flask
 POST 메소드를 사용하여 `/create` route로 데이터를 전송할 때 Flask에서는 어떻게 처리해아할까?
-```python
+{% highlight python %}
 @app.route('/create', method=['POST']  # route handler
 def create():
   value1 = request.form.get('field1')  # 두 방법 모두 값을 받아올 수 있음
@@ -103,7 +103,7 @@ def create():
   // do something with the user data ... # 받아온 값을 데이터 베이스에 추가해야함
   
   return render_template('index.html') # 결과를 나타낼 view
-```
+{% endhighlight %}
 
 <br>
 
