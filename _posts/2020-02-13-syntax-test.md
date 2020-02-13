@@ -3,9 +3,7 @@ layout: post
 title: syntax test
 ---
 -html222
-{% prism html %}
-<p> example </p>
-{% endprism %}
+<script type="prism-html-markup"> <p> example </p></script>
 
 - python
 
