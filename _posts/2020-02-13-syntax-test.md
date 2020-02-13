@@ -9,15 +9,9 @@ title: syntax test
 <pre>
 
 	<code>
-
-
-		var example = {
-			foo: true,
-
-			bar: false
-		};
-
-
+<h1>Hello World</h1>
+<p>jekyll</p>
+<h3>yoooo</h3>
 	</code>
 
 </pre>
