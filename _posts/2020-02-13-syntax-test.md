@@ -3,8 +3,9 @@ layout: post
 title: syntax test
 extra_css: /assets/css/prism.css
 ---
-```html
-   <html>
+
+<pre><code class="language-html">
+<html>
     <head>
       <h1>test</h1>
     </head>
@@ -12,20 +13,8 @@ extra_css: /assets/css/prism.css
       <p>Hello World</p>
     </body>
   </html>
-```
+</code></pre>
 
--md
-
-```md
-<html>
-  <head>
-    <h1>test</h1>
-  </head>
-  <body>
-    <p>Hello World</p>
-  </body>
-</html>
-```
 
 - python
 
