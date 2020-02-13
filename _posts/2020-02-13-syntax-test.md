@@ -3,7 +3,7 @@ layout: post
 title: syntax test
 ---
 -html222
-{% prism html %}
+```
  <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,8 @@ title: syntax test
 
 </body>
 </html>
-{% endprism %}
+```
+
 - python
 
 ```python
