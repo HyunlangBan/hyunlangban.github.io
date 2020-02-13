@@ -4,7 +4,7 @@ title: syntax test
 ---
 - html
 
-```html
+<pre><code class="language-html">
 <html>
   <head>
     <h1>test</h1>
@@ -12,8 +12,8 @@ title: syntax test
   <body>
     <p>Hello World</p>
   </body>
-</html>
-```
+</html></code></pre>
+
 
 -md
 
