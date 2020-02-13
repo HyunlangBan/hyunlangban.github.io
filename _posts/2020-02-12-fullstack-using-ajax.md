@@ -14,12 +14,12 @@ tag: fullstack
 
 ### Using `XMLHttpRequest`
 #### Send a Request To a Server
-```js
+{% highlight javascript %}
 var xhttp = new XMLHttpRequest();  // #1
 description = document.getElementById("description").value;  // #2
 xhttp.open("GET", "/todos/create?description="+description);  // #3
 xhttp.send();  // #4
-```
+{% endhighlight %}
 >- The XMLHttpRequest object can be used to exchange data with a web server behind the scenes. 
 >- open(method, url, async):	Specifies the type of request
 >  - method: the type of request: GET or POST
