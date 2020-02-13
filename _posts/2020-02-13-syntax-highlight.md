@@ -53,10 +53,10 @@ jekyll로 블로그를 처음 만들었을 때 선택했던 테마가 [type-them
 글꼴은 포함이 안되어있으므로 하이라이팅과 블럭색이 바뀌었다.
 - 해결하지 못한 글꼴과 inline코드를 포기할 수 없어서 그냥 헤더에 `prism.css`를 링크해버렸다.
 - 그리고 코드를 작성할 때는 pygments를 사용할 때의 방식으로 코드 블럭을 작성(//은 빼고)해주면 된다. 기본 markdown방식으로 하면 적용이 안된다.
-{% highlight markdown %}
-//{% highlight myLanguage %}
+```
+{% highlight myLanguage %}
 your code
-//{% endhighlight %}
 {% endhighlight %}
+```
 결국은 코드블럭을 바꾸기는 했다. 배경도 어두워졌고 글꼴도 바뀌었다. 
 하지만 gem plugin 사용법을 다시 더 찾아본다음에 tomorrow night 테마를 다시 적용해보고 싶다.
