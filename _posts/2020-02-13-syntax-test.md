@@ -3,7 +3,7 @@ layout: post
 title: syntax test
 ---
 -html222
-```
+```html
  <!DOCTYPE html>
 <html>
 <head>
