@@ -3,16 +3,17 @@ layout: post
 title: syntax test
 ---
 - html
-```
-<html>
-  <head>
-    <h1>test</h1>
-  </head>
-  <body>
-    <p>Hello World</p>
-  </body>
-</html>
-```
+{% prismc html %}
+   <html>
+    <head>
+      <h1>test</h1>
+    </head>
+    <body>
+      <p>Hello World</p>
+    </body>
+  </html>
+{% endprismc %}
+
 
 -md
 
