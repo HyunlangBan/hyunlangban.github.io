@@ -3,8 +3,7 @@ layout: post
 title: syntax test
 ---
 -html222
-{% raw %}
- {% prism html %}
+{% prism html %}
  <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +16,7 @@ title: syntax test
 
 </body>
 </html>
- {% endprism %}
-{% endraw %}
-
+{% endprism %}
 - python
 
 ```python
