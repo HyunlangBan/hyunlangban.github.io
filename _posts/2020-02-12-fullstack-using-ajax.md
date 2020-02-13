@@ -43,7 +43,7 @@ xhttp.send();  // #4
 - 비동기: It's on the client side that you reacts to the server and you figure out how to update the DOM that is already loaded on the client based on the response that you get.
 
 #### Server Response - XMLHttpRequest on success
-{% hightlight javascript %}
+{% highlight javascript %}
 xhttp.onreadystagechange = function() {
   if (this.readyState === 4 && this.status === 200) {
   // on successful response
@@ -59,7 +59,7 @@ xhttp.onreadystagechange = function() {
 
 
 ### Using `Fetch`
-{% hightlight javascript %}
+{% highlight javascript %}
 fetch('/my/request', {
   method: 'POST',
   body: JSON.stringity({
