@@ -76,10 +76,10 @@ paginate_path: "blog/page:num"
 
 # BUILD SETTINGS
 markdown: kramdown
-# kramdown:
-#    syntax_highlighter_opts:
-#       disable : true
-highlighter: none
+kramdown:
+   syntax_highlighter_opts:
+      disable : true
+# highlighter: none
 
 sass:
   sass_dir: _sass
