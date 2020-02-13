@@ -3,8 +3,7 @@ layout: post
 title: syntax test
 ---
 -html222
-<pre>
-    <code class="language-html">
+```html
         &lt;table class="data-table">
             &lt;tr>
                 &lt;td>Title&lt;/td>
@@ -19,8 +18,7 @@ title: syntax test
                 &lt;td>£1.00&lt;/td>
             &lt;/tr>           
         &lt;/table>
-    </code>
-</pre>
+```
 
 - python
 
