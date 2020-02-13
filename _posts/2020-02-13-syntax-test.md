@@ -2,8 +2,7 @@
 layout: post
 title: syntax test
 ---
-- html
-{% prismc html %}
+```html
    <html>
     <head>
       <h1>test</h1>
@@ -12,8 +11,7 @@ title: syntax test
       <p>Hello World</p>
     </body>
   </html>
-{% endprismc %}
-
+```
 
 -md
 
