@@ -107,6 +107,8 @@ finally:
   db.session.close()
 ```
 
+<br>
+
 ### Implement `try`...`except`...`finally` in the app
 ```python
 from flask import abort
