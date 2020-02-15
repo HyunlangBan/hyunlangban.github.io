@@ -1,198 +1,227 @@
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0px; }
-.highlight .gh {
-  color: #999999;
+/* PrismJS 1.19.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+c+csharp+cpp+django+docker+go+java+json+markdown+markup-templating+matlab+perl+php+plsql+powershell+python+r+jsx+tsx+ruby+sql+swift+typescript+wasm+xquery&plugins=line-highlight+line-numbers+unescaped-markup+normalize-whitespace */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
 }
-.highlight .sr {
-  color: #f6aa11;
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
 }
-.highlight .go {
-  color: #888888;
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
 }
-.highlight .gp {
-  color: #555555;
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
 }
-.highlight .gs {
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
 }
-.highlight .gu {
-  color: #aaaaaa;
+
+.token.punctuation {
+	color: #ccc;
 }
-.highlight .nb {
-  color: #f6aa11;
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
 }
-.highlight .cm {
-  color: #75715e;
+
+.token.function-name {
+	color: #6196cc;
 }
-.highlight .cp {
-  color: #75715e;
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
 }
-.highlight .c1 {
-  color: #75715e;
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
 }
-.highlight .cs {
-  color: #75715e;
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
 }
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
-  color: #75715e;
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
 }
-.highlight .err {
-  color: #960050;
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
 }
-.highlight .gr {
-  color: #960050;
+
+.token.important,
+.token.bold {
+	font-weight: bold;
 }
-.highlight .gt {
-  color: #960050;
+.token.italic {
+	font-style: italic;
 }
-.highlight .gd {
-  color: #49483e;
+
+.token.entity {
+	cursor: help;
 }
-.highlight .gi {
-  color: #49483e;
+
+.token.inserted {
+	color: green;
 }
-.highlight .ge {
-  color: #49483e;
+
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
 }
-.highlight .kc {
-  color: #66d9ef;
+
+.line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em; /* Same as .prism’s padding-top */
+
+	background: hsla(24, 20%, 50%,.08);
+	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
+	pointer-events: none;
+
+	line-height: inherit;
+	white-space: pre;
 }
-.highlight .kd {
-  color: #66d9ef;
+
+	.line-highlight:before,
+	.line-highlight[data-end]:after {
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: hsla(24, 20%, 50%,.4);
+		color: hsl(24, 20%, 95%);
+		font: bold 65%/1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		border-radius: 999px;
+		text-shadow: none;
+		box-shadow: 0 1px white;
+	}
+
+	.line-highlight[data-end]:after {
+		content: attr(data-end);
+		top: auto;
+		bottom: .4em;
+	}
+
+.line-numbers .line-highlight:before,
+.line-numbers .line-highlight:after {
+	content: none;
 }
-.highlight .kr {
-  color: #66d9ef;
+
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
 }
-.highlight .no {
-  color: #66d9ef;
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
 }
-.highlight .kt {
-  color: #66d9ef;
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
 }
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s, .highlight .sa, .highlight .dl {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf, .highlight .fm {
-  color: #a6e22e;
-}
-.highlight .vc {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .nn {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .nl {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .ni {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .bp {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .vg {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .vi {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .nv, .highlight .vm {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .w {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
-  background-color: #272822;
-}
-.highlight .ow {
-  color: #f92672;
-}
-.highlight .nt {
-  color: #f92672;
-}
-.highlight .k, .highlight .kv {
-  color: #f92672;
-}
-.highlight .kn {
-  color: #f92672;
-}
-.highlight .kp {
-  color: #f92672;
-}
-.highlight .o {
-  color: #f92672;
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+
+/* Fallback, in case JS does not run, to ensure the code is at least visible */
+[class*='lang-'] script[type='text/plain'],
+[class*='language-'] script[type='text/plain'],
+script[type='text/plain'][class*='lang-'],
+script[type='text/plain'][class*='language-'] {
+	display: block;
+	font: 100% Consolas, Monaco, monospace;
+	white-space: pre;
+	overflow: auto;
 }
