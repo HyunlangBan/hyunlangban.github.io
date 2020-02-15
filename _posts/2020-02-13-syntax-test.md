@@ -2,10 +2,11 @@
 layout: post
 title: syntax test
 ---
-<script type="text/plain" class="language-markup">
-   <p>Example</p>
-</script>
-
+```python
+a = input()
+b = "Hello"
+print(a, b)
+```
 {% highlight ruby %}
 def foo
   puts 'foo'
