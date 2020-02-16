@@ -98,7 +98,7 @@ POST 메소드를 사용하여 `/create` route로 데이터를 전송할 때 Fla
 @app.route('/create', method=['POST']  # route handler
 def create():
   value1 = request.form.get('field1')  # 두 방법 모두 값을 받아올 수 있음
-  value2 = request.from['field2']
+  value2 = request.form['field2']
   
   // do something with the user data ... # 받아온 값을 데이터 베이스에 추가해야함
   
