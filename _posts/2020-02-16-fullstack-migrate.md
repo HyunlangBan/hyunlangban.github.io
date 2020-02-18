@@ -191,9 +191,9 @@ def upgrade():
 
     # ### end Alembic commands ###
 ```
-- 1. `nullable=True`로 변경하여 기존 값들에도 새로운 스키마가 적용될 수 있도록 한다.
-- 2. `op.execute()`로 SQL update문들 이용하여 기존 테이블에 있던 레코드의 completed 칼럼의 값을 null에서 False로 변경한다.
-- 3. `completed`컬럼에 새로운 null값들이 올 수 없도록 `nullable=False`로 변경해준다.
+1. `nullable=True`로 변경하여 기존 값들에도 새로운 스키마가 적용될 수 있도록 한다.
+2. `op.execute()`로 SQL update문들 이용하여 기존 테이블에 있던 레코드의 completed 칼럼의 값을 null에서 False로 변경한다.
+3. `completed`컬럼에 새로운 null값들이 올 수 없도록 `nullable=False`로 변경해준다.
 
 그리고 `flask db upgrade`를 한 후 psql을 통해 `todos` 테이블을 확인해보면
 ```
