@@ -72,7 +72,7 @@ migrate = Migrate(app, db)   # Falsk app, SQLAlchemy database와 연결
 
 #### Syncing models using `flask db migrate`
 - 변경 사항을 감지하고 upgrade와 downgrade이 있는 migration 파일을 생성한다.
-- `Todo` 클래스를 정의한 뒤에 적어주었던 `db.create_all()`을 지운 후 `flask db migrate`를 실행해준다.
+- 기존의 스키마를 모두 기록하기 때문에 `db.create_all()`을 대체하므로 `db.create_all()`은 삭제해준다.
 - 만약 우리가 `todos`를 저장했던 데이터베이스 `todoapp`을 삭제하고 다시 생성한 후 `flask db migrate`를 한다면 `versions` 폴더에 다음과 같은 migration이 생성된다.
 
 ```python
@@ -164,7 +164,7 @@ sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) 오류:  "comp
 
 우리가 클래스를 작성할 때 completed 컬럼에서 `nullable=False`라고 했지만 해당 컬럼이 생기기 전에 작성했던 레코드에서는 null값일 수 밖에 없기 때문이다.
 
-이 문제를 해결하기 위해서는 해당 migration 파일을 수정해주어야 한다.
+이 문제를 해결하기 위해서는 해당 migration script를 수정해주어야 한다.
 
 ```python
 # 7c53ca560e11_.py
@@ -203,3 +203,8 @@ todoapp=# \d todos
   3 | todo3       | f
 ```
 `completed` 컬럼이 잘 추가된 것을 확인할 수 있다.
+
+
+#### 추가 자료를 보고싶다면?
+- https://flask-migrate.readthedocs.io/en/latest/
+- https://alembic.sqlalchemy.org/en/latest/
