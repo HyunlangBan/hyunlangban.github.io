@@ -65,10 +65,14 @@ from flask_migrate import Migrate
 migrate = Migrate(app, db)   # Falsk app, SQLAlchemy database와 연결
 ```
 
+<br>
+
 #### Creating the migrations directory structure using `flask db init`
 - Create inital migrations directory structure
 - 커맨드 창에서 `app.py`이 저장된 폴더로 이동한 후 `falsk db init`을 해준다.
 - 생성된 `alembic.ini`는 로깅, 파일 이름, 기본 포멧등의 구성을 설정할 수 있는 config scripts 이다.
+
+<br>
 
 #### Syncing models using `flask db migrate`
 - 변경 사항을 감지하고 upgrade와 downgrade이 있는 migration 파일을 생성한다.
@@ -103,6 +107,8 @@ def downgrade():
     # ### end Alembic commands ###
 ```
 
+<br>
+
 #### `Flask db upgrade` and `flask db downgrade`
 `todoapp`이라는 데이터베이스를 삭제했다가 다시 생성하면 안에 있던 테이블들은 다 사라진다.
 하지만 `flask db upgrade`를 한 후 `todoapp` 내에 있는 테이블을 확인해보면 
@@ -120,6 +126,8 @@ todoapp=# \dt
 `alembic_version`이라는 테이블은 우리의 데이터베이스의 버전을 저장하고 migrations을 관리한다.
 
 또한 여기서 `flask db downgrade`를 하게되면 생성되었던 `todos`가 다시 사라지는 것을 볼 수 있다. 이것은 migration의 `downgrade()`이 실행된 결과이다.
+
+<br>
 
 #### Adding the `completed` column to test migration
 ```python
@@ -153,6 +161,8 @@ def downgrade():
 ```
 
 내용을 확인한 후 `flask db upgrade`를 통해 적용되지 않은 migraions의 가장 최근 버전으로 업그레이드 해준다.
+
+<br>
 
 #### Working with existing data
 만약 `completed` 컬럼을 추가하기 전 테이블에 기존 값(id, description)들이 있다면 어떨까?
@@ -204,6 +214,7 @@ todoapp=# \d todos
 ```
 `completed` 컬럼이 잘 추가된 것을 확인할 수 있다.
 
+<br>
 
 #### 추가 자료를 보고싶다면?
 - https://flask-migrate.readthedocs.io/en/latest/
