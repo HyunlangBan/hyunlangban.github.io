@@ -101,3 +101,19 @@ def downgrade():
     op.drop_table('todos')
     # ### end Alembic commands ###
 ```
+
+#### `Flask db upgrade` and `flask db downgrade`
+`todoapp`이라는 데이터베이스를 삭제했다가 다시 생성하면 안에 있던 테이블들을 다 사라진다.
+하지만 `flask db upgrade`를 한 후 `todoapp` 내에 있는 테이블을 확인해보면 
+
+```
+todoapp=# \dt
+           릴레이션(relation) 목록
+ 스키마 |      이름       |  종류  |  소유주
+--------+-----------------+--------+----------
+ public | alembic_version | 테이블 | postgres
+ public | todos           | 테이블 | postgres
+ ```
+ 
+이와 같이 `todos`가 다시 생성된 것을 볼 수 있다. 생성된 내용은 migration에 있는 `upgrade()` 내용과 같다.
+`alembic_version`이라는 테이블은 우리의 데이터베이스의 버전을 저장하고 migrations을 관리한다.
