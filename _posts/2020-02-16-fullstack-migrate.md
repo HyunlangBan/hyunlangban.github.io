@@ -72,8 +72,8 @@ migrate = Migrate(app, db)   # Falsk app, SQLAlchemy database와 연결
 
 #### Syncing models using `flask db migrate`
 - 변경 사항을 감지하고 upgrade와 downgrade이 있는 migration 파일을 생성한다.
-- 만약 우리가 `todos`를 저장했던 데이터베이스 `todoapp`을 삭제하고 다시 생성한 후 `flask db migrate`를 한다면 `'versions` 폴더에 다음과 같은 migration이 생성된다.
-```python
+- 만약 우리가 `todos`를 저장했던 데이터베이스 `todoapp`을 삭제하고 다시 생성한 후 `flask db migrate`를 한다면 `versions` 폴더에 다음과 같은 migration이 생성된다.
+```
 from alembic import op
 import sqlalchemy as sa
 
