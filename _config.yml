@@ -5,11 +5,11 @@ url: "https://hyunlangban.github.io/"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: "초보개발자의 나아가기록"
+  title: "나아가기록"
   avatar: assets/img/avatar.png
   favicon: assets/computer_favicon.ico
   gravatar: # Email MD5 hash
-  description: "초보개발자가 나아가는 과정을 기록하는 개발블로그 " # used by search engines
+  description: "개발 초보의 나아가는 과정을 기록하는 블로그 " # used by search engines
 
   # Header and footer text
   header_text: >
