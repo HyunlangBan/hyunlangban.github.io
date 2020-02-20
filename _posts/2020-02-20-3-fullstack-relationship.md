@@ -88,5 +88,5 @@ class Parent(db.Model):
   collection_class=list,
   cascade = 'save-update' # OR: all, delete-orphan
 ```
-- `collection_class': children의 collection을 list, dictionary, set 등으로 다양하게 나타낼 수 있다.
+- `collection_class`: children의 collection을 list, dictionary, set 등으로 다양하게 나타낼 수 있다.
 - `cascade`: parent에 update, delete가 발생했을 때 children은 어떻게 처리할지 결정한다.
