@@ -71,7 +71,7 @@ child1.some_parent
 - Eager loading: 모든 joined data objects를 한번에 로드한다.
   - Pro: 추후에 발생할 수 있는 query들을 줄여준다. 
   - Con: 처음에 joined table을 로드할때 시간이 오래걸린다.
- <br>
+ <br><br>
 기본 옵션은 `lazy=True`이므로 생략 가능하다.
 `children = db.relationship('ChildModel', backref='some_parent', lazy=True)`
 
