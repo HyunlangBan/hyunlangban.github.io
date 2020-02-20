@@ -39,13 +39,13 @@ db.session.commit()
 
 #### View Update - Send Request
 ```html
-## index.html
+<!--index.html-->
 <script>
   const checkboxes = document.querySelectorAll('.check-completed');
   for (let i = 0; i < checkboxes.length; i++){      # 1
     const checkbox = checkbox[i];
     checkbox.onchange = function(e) {               # 2
-      # console.log('event', e);
+      console.log('event', e);
       const newCompleted = e.target.checked;        # 3
       const todoId = e.target.dataset['id'];        # 4
       fetch('/todos/' + todoId + 'set-completed', {               # 5
