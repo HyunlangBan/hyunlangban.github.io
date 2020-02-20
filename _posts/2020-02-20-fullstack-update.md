@@ -39,6 +39,7 @@ db.session.commit()
 
 #### `index.html` Update - Send Request
 ```javascript
+...
   const checkboxes = document.querySelectorAll('.check-completed');
   for (let i = 0; i < checkboxes.length; i++){      # 1
     const checkbox = checkbox[i];
