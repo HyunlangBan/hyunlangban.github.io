@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Updating a Todo Item
+title: The U in CRUD
 tag: fullstack
 ---
 
