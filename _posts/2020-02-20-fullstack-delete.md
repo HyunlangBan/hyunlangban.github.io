@@ -60,5 +60,5 @@ def delete_todo(todo_id):
     db.session.rollback()
   finally:
     db.session.close()
-  return jsonify({ 'success': True })
+  return jsonify({ 'success': True })    # 안해주면 server error 발생
 ```
