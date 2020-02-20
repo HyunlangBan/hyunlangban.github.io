@@ -31,23 +31,7 @@ db.session.commit()
 <br>
 
 #### View Update - 체크박스 나타내기
-```html
-<!--index.html-->
-...
-<style>
-ul {
-  list-style: none;
-}
-...
-</style>
-...
-<ul id="todos">
-  {% for d in data %}
-  <li><input type="checkbox" {% if d.completed %} checked />{{ d.description }}</li>
-  {% endfor %}
-</ul>
-...
-```
+<script src="https://gist.github.com/HyunlangBan/19a43d15fef0a51ace72fa473ba87dbd.js"></script>
 - Jinja의 if statement: `d.completed`가 `True`이면 checked하고 아니면 아무것도 하지 않는다.
 
 
