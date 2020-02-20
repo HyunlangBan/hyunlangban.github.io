@@ -100,7 +100,7 @@ def set_completed_todo(todo_id):
 
 #### Fixing Ordering
 아이템들을 체크 한 후 새로고침을 눌러보면 아이템들의 정렬이 변하는 것을 볼 수 있다.
-이것을 해결하기 위해 id를 이용하여 추가된 순으로 정렬해본다.
+이것을 해결하기 위해 `id`를 이용하여 추가된 순으로 정렬해본다.
 ```python
 @app.route('/')
 def index():
