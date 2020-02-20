@@ -30,9 +30,36 @@ db.session.commit()
 
 <br>
 
-#### View Update - 체크박스 나타내기
+#### View Update - Show Checkboxes
 <script src="https://gist.github.com/HyunlangBan/19a43d15fef0a51ace72fa473ba87dbd.js"></script>
 - Jinja의 if statement: `d.completed`가 `True`이면 checked하고 아니면 아무것도 하지 않는다.
 
 
+#### View Update - Send Request
+```html
+## index.html
+<script>
+  const checkboxes = document.querySelectorAll('.check-completed');
+  for (let i = 0; i < checkboxes.length; i++){      # 1
+    const checkbox = checkbox[i];
+    checkbox.onchange = function(e) {               # 2
+      console.log('event', e);
+      const newCompleted = e.target.checked;        # 3
+      fetch('/todos/set-completed', {               # 4
+        method: 'POST',
+        body: JSON.stringify({
+          'completed': newCompleted
+        }),
+        headers: {
+          'Content-Type`: 'application/json'
+        }
+      })
+    }
+  }
+...
+```
 
+- #1. items의 모든 체크박스를 for문을 이용해 확인한다.
+- #2. 만약 체크박스에 변경이 발생했다면 event function을 실행한다.
+- #3. 체크 박스를 토글했을때 Console에서 event->target->checked를 확인하면 true와 false를 확인할 수 있다. 해당 상태를 `newCompleted`라는 변수에 저장한다.
+- #4. 지정한 route로 request를 전송한다.
