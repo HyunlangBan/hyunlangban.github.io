@@ -201,3 +201,39 @@ class Product(db.Model):
 >>>db.session.add(order)
 >>>db.session.commit()
 ```
+
+- 테이블 확인(psql)
+```
+todoapp=# \dt
+           릴레이션(relation) 목록
+ 스키마 |      이름       |  종류  |  소유주
+--------+-----------------+--------+----------
+ public | alembic_version | 테이블 | postgres
+ public | order           | 테이블 | postgres
+ public | order_items     | 테이블 | postgres
+ public | product         | 테이블 | postgres
+ public | todolists       | 테이블 | postgres
+ public | todos           | 테이블 | postgres
+(6개 행)
+
+todoapp=# select * from "order";   # 그냥 order로 쓰면 order_by로 착각하여 error 발생
+ id | status
+----+--------
+  1 | ready
+(1개 행)
+
+
+todoapp=# select * from product;
+ id |     name
+----+--------------
+  1 | Great widget
+(1개 행)
+
+
+todoapp=# select * from order_items
+todoapp-# ;
+ order_id | product_id
+----------+------------
+        1 |          1
+(1개 행)
+```
