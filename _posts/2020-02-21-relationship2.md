@@ -230,8 +230,7 @@ todoapp=# select * from product;
 (1개 행)
 
 
-todoapp=# select * from order_items
-todoapp-# ;
+todoapp=# select * from order_items;
  order_id | product_id
 ----------+------------
         1 |          1
