@@ -97,7 +97,9 @@ class Parent(db.Model):
 - `db.relationship`은 foreign key 설정을 해주지 않기 때문에 foreign key constraint(제약조건)를 지닌 child model에서 `some_parent_id`라는 컬럼을 추가해야한다.
 - `db.relationship`은 parent model에서 했지만 foreign key constraint는 child 모델에서 해야한다.
 - Foreign key constraint는 foreign key 컬럼과 foreign table의 primary key가 항상 대응되는것을 보장하면서 null값을 가지지않는 referential integrity을 지닌다.
+
 <br>
+
 #### db.ForienKey
 ![foreignkey](/img/foreignkey.png)
 - `some_parent_id`의 데이터 타입은 foreign table의 `id`의 데이터 타입과 동일해야한다.
