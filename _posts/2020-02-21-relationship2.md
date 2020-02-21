@@ -57,3 +57,47 @@ Generating C:\Users\gusfk\Desktop\class-demos\todoapp\migrations\versions\dde729
 6. `app.py`로 가서 `list_id`의 `nullable`을 다시 `False`로 설정한다.
 7. `flask db migrate`를 하면 해당 변화를 발견하고 migration이 생성되고, `flask db upgrade`를 해준다.
 
+<br>
+
+### CRUD on a LIST of To-Dos
+- 좌측에 카테고리 리스트, 우측에 To-Dos를 배치하여 원하는 카테고리를 누르면 그 카테고리에 속한 To-Do들이 나타나도록 해야한다.
+<br>
+#### MVC Flow
+- **View**: 사용자가 리스트를 클릭할 수 있도록 하고 클릭하면 controller로 클릭한 리스트의 ID를 포함한 정보와 함께 request를 보내야한다.
+- **Controller**: **Model**에게 해당 리스트 ID에 속한 to-dos들을 가져오라고 알린다. 모든 item들을 불러오면 View가 업데이트된(선택한 리스트의 id에 속한) to-do item들을 나타내도록 알려준다.
+
+<br>
+
+#### Homepage 수정하기
+기존에는 homepage에서 데이터베이스에 있는 모든 todo items이 나열되도록 했었다. 하지만 이제는 특정 list에 속한 item들만을 나타내고자한다.
+
+```python
+@app.route('/lists/<list_id>')
+def get_list_todos(list_id):
+  return render_template('index.html', data = Todo.query.filter_by(list_id=list_id).order_by('id).all())
+
+@app.route('/')   #homepage
+def index():
+  return redirect(url_for('get_list_todos', list_id=1))
+## 홈페이지에서 get_list_todos route handler에 redirect하여 list_id=1에 속하는 todo item들을 나타내도록 한다.
+```
+
+<br>
+
+#### 리스트에 새 카테고리 추가하기
+- In Terminal
+```
+# move to your project directory and run python
+>>> from app import db, TodoList, Todo
+>>> list = TodoList(name='Urgent')       # 새 카테고리 추가
+>>> todo = Todo(description='Urgent todo 1')
+>>> todo2 = Todo(description='Urgent todo 2')
+>>> todo3 = Todo(description='Urgent todo 3')
+>>> todo.list = list      # todo와 연관된 parent object를 연결해주어야 하므로 앞에서 선언한 list로 설정한다.
+>>> todo2.list = list
+>>> todo3.list = list 
+>>> db.session.add(list)   # list만 add하면 관련된 children은 자동으로 추가 된다. cascade option의 기본 설정이기 때문이다.
+>>> db.session.commit
+```
+- SQlAlchemy는 parent가 add될때 관련된 children이 함께 자동으로 add될 수 있도록 해준다.
+- 또한 테이블 내에서 발생하는 모든 ordering details를 처리해준다.
