@@ -90,3 +90,31 @@ class Parent(db.Model):
 ```
 - `collection_class`: children의 collection을 list, dictionary, set 등으로 다양하게 나타낼 수 있다.
 - `cascade`: parent에 update, delete가 발생했을 때 children은 어떻게 처리할지 결정한다.
+
+<br>
+
+### Foreign Key Constraint Setup
+- `db.relationship`은 foreign key 설정을 해주지 않기 때문에 foreign key constraint(제약조건)를 지닌 child model에서 `some_parent_id`라는 컬럼을 추가해야한다.
+- `db.relationship`은 parent model에서 했지만 foreign key constraint는 child 모델에서 해야한다.
+- Foreign key constraint는 foreign key 컬럼과 foreign table의 primary key가 항상 대응되는것을 보장하면서 null값을 가지지않는 referential integrity을 지닌다.
+
+#### `db.ForienKey`
+![foreignkey](/img/foreignkey.png)
+- `some_parent_id`의 데이터 타입은 foreign table `id`의 데이터 타입과 동일해야한다.
+
+#### Example: a driver has many vehicles
+```python
+class Driver(db.Model):
+ __tablename__ = 'drivers'
+ id = db.Column(db.Integer, primary_key = True)
+ ...
+ vehicles = db.relationship('Vehicle', backref='driver', lazy=True)
+ 
+class Vehicle(db.Model):
+ __talbename__='vehicles'
+ id = db.Column(db.Integer, primary_key=True)
+ make = db.Column(db.String(), nullable = False)
+ ...
+ driver_id = db.Column(db.Integer, db.ForeignKey('drivers.id'), nullable=False)
+```
+ 
