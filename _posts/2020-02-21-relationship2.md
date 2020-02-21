@@ -143,3 +143,61 @@ Foreign Key를 설정할때 one to many와 one to one은 그 방법이 같다. �
 중간에 있는 association table은 many to many 관계에 필요한 다른 foreign table들을 연결하는 여러개의 foreign key를 가진다.
 
 예를들어 위와 같이 한 order에서 어떤 products를 주문했는지 확인하려면 `order_items`에서 order_id를 확인한 후 그에 속하는 product_id를 확인하여 정보를 가져오면 된다. 반대로 한 product를 주문한 모든 orders를 확인하려면 `order_items`에서 product_id를 확인한 후 그에 맞는 order_id들의 정보를 가져오면 된다.
+
+<br>
+
+### Modeling a many-to-many relatuinship in SQLAlchemy ORM
+#### Setting up the many-to-many relationship
+```
+association_table = Table('association', Base.metadata,
+  Column('left_id', Integer, ForeignKey('left.id')),
+  Column('right_id', Integer, ForeignKey('right.id'))
+)
+
+class Parent(Base):
+  __tablename__ = 'left'
+  id = Column(Integer, primary_key=True)
+  children = relationship("Child", secondary=association_table)
+  
+class Child(Base):
+  __tablename__ = 'right'
+  id = Column(Integer, primary_key=True)
+```
+
+<br>
+
+#### Example
+```python
+order_items = db.Table('order_items',  # name of association table
+  db.Column('order_id', db.Integer, db.ForeignKey('order.id'), primary_key=True),
+  db.Column('product_id', db.Integer, db.ForeignKey('product.id'), primary_key=True)
+)
+
+class Order(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  status = db.Column(db.String(), nullable=False)
+  products = db.relationship('Product', secondary=order_items,
+    backref=db.backref('orders', lazy=True))
+  
+class Product(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  name = db.Column(db.String(), nullable=False)
+```
+- SQLAlchemy의 `Table`을 이용하여 sociation table을 선언할 수 있다.
+- `db.relationship`의 `secondary` 옵션을 통해 association table과 parent model을 매핑할 수 있다.
+- 또한 `backref`를 이용하여 주어진 product의 order를 호출할 수 있고 또한 두 model(oder, proudct)들을 매핑할 수 있도록 해준다. 따라서 product.orders, order.products가 가능하다.
+
+<br>
+
+#### 테이블 작성해보기
+- Run Python in terminal
+```
+>>>from app import db, Order, Product
+>>>db.create_all()
+>>>order = Order(status='ready')
+>>>product = Product(name='Great widget')
+>>>order.products = [product]    # 많은 product가 올 수도 있다.
+>>>product.orders = [order]    # 많은 order가 올 수도 있다.
+>>>db.session.add(order)
+>>>db.session.commit()
+```
