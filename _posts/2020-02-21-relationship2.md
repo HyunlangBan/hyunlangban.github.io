@@ -9,7 +9,8 @@ title: One-to-Many, Many-to-Many Relationships
 - To-Do List는 많은 To-Dos를 가질 수 있고, 각 To-Do는 하나의 To-Do List에 속하므로 두 모델 간에는 **one to many relationship**이 존재한다.
   - TodoList: Parent
   - Todo: Child
-  
+<br>
+
 #### Creating the `TodoList` model and adding the foreign key to child `Todo` model
 ```python
 class TodoList(db.Model):
@@ -25,7 +26,8 @@ class Todo(db.Model):
   completed = db.Column(db.Boolean, default=False)
   list_id = db.Column(db.Integer, db.ForeignKey('todolists.id'), nullable=False)
 ```
-  
+<br>
+
 #### Create and run a migration to upgrade the schema
 ```
 C:\Users\gusfk\Desktop\class-demos\todoapp>flask db migrate
@@ -42,6 +44,7 @@ Generating C:\Users\gusfk\Desktop\class-demos\todoapp\migrations\versions\dde729
 - `flask db migrage`를 하게 되면 새로운 테이블인 `todolists`와 `todos`에 새로 추가한 foreign key 컬럼을 발견한다.
 - migration file을 확인 한 후 `flask db upgrade`를 하게되면 NotNullViolation error가 발생한다.
   - 이유는 기존의 data에서는 추가될 새 컬럼(nullable=False)인 `list_id`의 값이 null이기 때문
+<br>
 
 #### NotNullViolation Error 해결방법
 1. 생성된 migration 파일에 가서 `list_id`의 컬럼 속성을 `nullable=False`에서 `nullable=True`로 바꾼다.
