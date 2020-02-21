@@ -123,3 +123,23 @@ def get_list_todos(list_id):
 <br>
 
 <script src="https://gist.github.com/HyunlangBan/46661543ad19416fa6853af0fdb67c68.js"></script>
+
+<br>
+
+### Many-to-Many Relationships
+- One to many
+  - ex) A class has many students
+- One to one
+  - ex) A passport belongs to a person
+- Many to many
+  - ex) A school teaches many subjects, and a subject is taught in many schools
+<br>
+Foreign Key를 설정할때 one to many와 one to one은 그 방법이 같다. 한가지 다른점은 one to many는 child 테이블에서 parent의 id가 여러번 포함될 수 있찌만 one to one은 한번만 나온다는 것이다.
+<br>
+하지만 many to many relationship에서는 두개의 one-to-many관계를 조인할 세번째 테이블이 필요하다.<br>
+
+![manytomany](/img/manytomany.png)
+
+중간에 있는 association table은 many to many 관계에 필요한 다른 foreign table들을 연결하는 여러개의 foreign key를 가진다.
+
+예를들어 위와 같이 한 order에서 어떤 products를 주문했는지 확인하려면 `order_items`에서 order_id를 확인한 후 그에 속하는 product_id를 확인하여 정보를 가져오면 된다. 반대로 한 product를 주문한 모든 orders를 확인하려면 `order_items`에서 product_id를 확인한 후 그에 맞는 order_id들의 정보를 가져오면 된다.
