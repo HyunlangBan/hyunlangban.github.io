@@ -114,7 +114,7 @@ def index():
 def get_list_todos(list_id):
   return render_template('index.html',
   lists=TodoList.query.all(),
-  active_list=TodoList.query.get(list_id),    # view의 todos 부분에서 현재 어떤 카테고리인지 알 수 있도록 이름을 표시하기 위함
+  active_list=TodoList.query.get(list_id),    # view의 todos 부분에서 현재 어떤 카테고리인지 알 수 있도록  표시하기 위함
   todos=Todo.query.filter_by(list_id=list_id).order_by('id').all()
 )
 ```
