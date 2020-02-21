@@ -62,6 +62,7 @@ Generating C:\Users\gusfk\Desktop\class-demos\todoapp\migrations\versions\dde729
 ### CRUD on a LIST of To-Dos
 - 좌측에 카테고리 리스트, 우측에 To-Dos를 배치하여 원하는 카테고리를 누르면 그 카테고리에 속한 To-Do들이 나타나도록 해야한다.
 <br>
+
 #### MVC Flow
 - **View**: 사용자가 리스트를 클릭할 수 있도록 하고 클릭하면 controller로 클릭한 리스트의 ID를 포함한 정보와 함께 request를 보내야한다.
 - **Controller**: **Model**에게 해당 리스트 ID에 속한 to-dos들을 가져오라고 알린다. 모든 item들을 불러오면 View가 업데이트된(선택한 리스트의 id에 속한) to-do item들을 나타내도록 알려준다.
