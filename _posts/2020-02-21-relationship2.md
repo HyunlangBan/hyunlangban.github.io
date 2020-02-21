@@ -102,3 +102,24 @@ def index():
 ```
 - SQlAlchemy는 parent가 add될때 관련된 children이 함께 자동으로 add될 수 있도록 해준다.
 - 또한 테이블 내에서 발생하는 모든 ordering details를 처리해준다.
+
+<br>
+
+#### Update View
+좌측에 list, 우측에 todos가 나타나도록 view를 업데이트한다.
+```python
+# app.py
+
+@app.route('/lists/<list_id>')
+def get_list_todos(list_id):
+  return render_template('index.html',
+  lists=TodoList.query.all(),
+  active_list=TodoList.query.get(list_id),    # view의 todos 부분에서 현재 어떤 카테고리인지 알 수 있도록 이름을 표시하기 위함
+  todos=Todo.query.filter_by(list_id=list_id).order_by('id').all()
+)
+```
+- 데이터베이스에서 todolists, todos의 데이터를 모두 가져온다.
+
+<br>
+
+<script src="https://gist.github.com/HyunlangBan/46661543ad19416fa6853af0fdb67c68.js"></script>
