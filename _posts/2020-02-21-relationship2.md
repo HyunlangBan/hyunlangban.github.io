@@ -135,7 +135,7 @@ def get_list_todos(list_id):
   - ex) A school teaches many subjects, and a subject is taught in many schools
 <br>
 Foreign Key를 설정할때 one to many와 one to one은 그 방법이 같다. 한가지 다른점은 one to many는 child 테이블에서 parent의 id가 여러번 포함될 수 있찌만 one to one은 한번만 나온다는 것이다.
-<br>
+<br><br>
 하지만 many to many relationship에서는 두개의 one-to-many관계를 조인할 세번째 테이블이 필요하다.<br>
 
 ![manytomany](/img/manytomany.png)
