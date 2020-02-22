@@ -5,7 +5,7 @@ tag: fullstack
 ---
 
 ### Proejct1 도중 생긴 오류 정리
-#### Postgresql에서 릴레이션을 찾을 수 없을 때
+#### 1. Postgresql에서 릴레이션을 찾을 수 없을 때
 분명 `\dt`를 했을 때
 ```
 project1=# \dt
