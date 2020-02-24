@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Project1 오류 정리
+title: Project1 오류 & 부족한 개념
 tag: fullstack
 ---
 
@@ -21,3 +21,5 @@ project1=# \dt
  오류가 났던 이유는 바로.. 테이블 이름에 대문자가 있어서였다. 대문자가 있으면 **쌍따옴표 안**에 넣어서 구분을 해주어야한다.
  `\d "Artist"`로 입력했더니 넣어준 칼럼들이 잘 나온다.
  
+### 부족한 개념
+- one to many relationship
