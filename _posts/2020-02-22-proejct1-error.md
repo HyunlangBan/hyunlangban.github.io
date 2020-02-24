@@ -23,3 +23,4 @@ project1=# \dt
  
 ### 부족한 개념
 - one to many relationship
+  - 왜 `Show`를 association table로 생각했을까?
