@@ -21,6 +21,8 @@ project1=# \dt
  오류가 났던 이유는 바로.. 테이블 이름에 대문자가 있어서였다. 대문자가 있으면 **쌍따옴표 안**에 넣어서 구분을 해주어야한다.
  `\d "Artist"`로 입력했더니 넣어준 칼럼들이 잘 나온다.
  
+<br>
+
 ### 부족한 개념
 #### one to many relationship: 왜 `Show`는 association table이 아닐까?
 - `Artist`와 `Venue`는 many to many relationship이다. 수업에서는 many-to-many relationship에서는 두개의 one-to-many relationships를 만들고 중간을 연결해주는 association table이 필요하다고 했다. 근데 왜 `Artist`와 `Venue`를 연결해주는 `Show`는 association table로 만들지 않고 새로 model을 만들어주는걸까?
