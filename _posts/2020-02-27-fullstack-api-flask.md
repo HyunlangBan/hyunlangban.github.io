@@ -39,3 +39,61 @@ Hypertext Transfer Protocol(HTTP)는 컴퓨터들이 서로 커뮤니케이션 �
 - URL은 자원의 위치만을 뜻한다. 즉, 이것은 오직 address만을 의미한다.
 - 정리하면 URL은 오직 address만을 뜻하는 반면 URI는 name, address 모두 가능하다. 그렇기 때문에 URL은 URI의 한 종류라고 볼 수 있다.
 
+### HTTP Request Elements
+![requestelement](/img/requestelement.png)
+또는 다음과 같이 표현될 수도 있다.
+```
+GET /tasks?term=homework HTTP/2.0
+Host: http://www.example.com
+Accept-Language:en
+```
+
+- Method: 수행되어야하는 오퍼레이션을 선언한다.
+- Path: Scheme과 host를 제외한 fetch되어야하는 자원의 URL이다.
+- HTTP Versions
+- Headers: Optional information, success as Accept-Language
+- Body: Optional information, 보통 POST나 PATCH와 같은 메소드를 위한 것이며 server에 보내져야 하는 리소스를 포함하고 있다.
+
+
+### HTTP Request Methods
+- GET: 주어진 URI의 요청된 자원에 대한 정보를 오직 불러오기만 한다.
+- POST: Data를 server에 보내고 새로운 자원을 생성한다.
+  - i.e. Post request를 보내면 전송한 데이터가 데이터베이스에서 어떤 object의 새로운 instance를 생성할 것이다.
+- PUT: Request data로 타겟 리소스의 모든 representation을 대체한다.
+  - i.e. 만약 인스타그램을 올린다고 하면 이미지를 포함하지 않고 글만 적어서 올린다면 이미지는 사라지고 글은 업데이트 된다.
+- PATCH: Request data로 타겟 리소스의 representation을 일부 변경한다.
+  - i.e. 똑같은 인스타그램의 상황에서 이미지를 포함하지 않고 글만 적어서 올렸을 때 이미지는 그대로 유지되고 글만 업데이트된다.
+  - 의도한 부분만 수정할 수 있기 때문에 PATCH보다는 안전한 방법이다.
+- DELETE: URI로 명시된 자원의 모든 representation을 제거한다.
+- OPTIONS: 요청된 자원을 위한 communication option들을 전송한다.
+
+### HTTP Responses
+![responseElement](/img/responseelement.png)
+
+#### Elements
+- Status Code & Status Message
+- HTTP Version
+- Headers: Request header와 비슷하다. response와 resource representation에 관한 정보를 제공한다. 보편적인 headers는 다음과 같다.
+  - Date: response가 언제 보내졌는지
+  - Content-Type: request의 body의 media type
+- Body: 요청된 리소스를 포함하는 optional data
+
+#### Status Codes
+API developer로서 정확한 status code를 보내는 것이 중요하다. status code는 무엇이 error를 발생시켰는지 또한 어떻게 진행되었는지를 이해하는데에 도움을 준다.
+
+#### Codes fall into five categories
+- `1xx`: Informational
+- `2xx`: Success
+- `3xx`: Redirection
+- `4xx`: Client Error
+- `5xx`: Server Error
+
+#### Common Codes
+- `200`: OK
+- `201`: Created
+- `304`: Not Modified
+- `400`: Bad Request
+- `401`: Unauthorized
+- `404`: Not Found
+- `405`: Method Not Allowed
+- `500`: Internal Server Error
