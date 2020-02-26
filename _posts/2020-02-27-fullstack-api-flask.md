@@ -85,15 +85,25 @@ API developer로서 정확한 status code를 보내는 것이 중요하다. stat
 - `1xx`: Informational
 - `2xx`: Success
 - `3xx`: Redirection
+  - 무슨 일이 발생해서 백엔드에 redirection이 발생했다면 우리는 그것을 알고 있어야한다.
 - `4xx`: Client Error
+  - Request가 제대로 포맷되지 않았거나 body가 잘못되었을 때와 같이 request에서 뭔가가 잘못되었을때 발생한다.
 - `5xx`: Server Error
+  - Request는 괜찮았지만 server가 성공적으로 일을 처리하지 못했을때와 같이 백엔드에 무언가가 발생했을 때 일어난다.
 
 #### Common Codes
+- `100`: Continue
+  - Option을 받았고 프로세스에 대한 허가를 받았으므로 request를 계속 보내도 된다는 뜻
 - `200`: OK
+  - i.e. `GET` reqeust에서 성공적으로 처리되어 body를 return받았을때
 - `201`: Created
+  - i.e. `POST` request가 성공적으로 처리되었을 때 
 - `304`: Not Modified
+  - i.e. `PUT`/`PATCH` requests가 성공적으로 처리되지 않았을때
 - `400`: Bad Request
 - `401`: Unauthorized
+  - Request는 잘 포맷되었으나 원하는 것 또는 리소스에 access를 가지고 있지 않을때
 - `404`: Not Found
+  - 요청하는 것이 백엔드에 존재하지 않음
 - `405`: Method Not Allowed
 - `500`: Internal Server Error
