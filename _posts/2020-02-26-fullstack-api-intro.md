@@ -37,7 +37,7 @@ client는 API 서버에 request를 보내고 서버에서는 요청을 파싱([�
 5. client는 구현에 따라 그 response를 랜더(html로 입력받아 해석 후 모니터로 출력)한다.
 
 
-###Internet Protocols(IPs)
+### Internet Protocols(IPs)
 Internet Protocol(IP)는 인터넷을 통해 컴퓨터간 데이터를 전송하는 프로토콜이다. 각 컴퓨터에는 인터넷에 연결된 다른 모든 컴퓨터에서 식별하는 고유한 
 IP주소가 있어야한다.
 
@@ -47,3 +47,11 @@ IP주소가 있어야한다.
 - File Transfer Protocol(FTP): server와 client간에 파일들을 이동시키는데 사용된다.
 
 API는 HTTP를 통해 client에게 데이터를 전송하기 때문에 우리는 주로 HTTP에 대해 다루게 될 것이다.
+
+### RESTful APIs
+REST는 Representational State Transfer를 의미한다. 2000년에 Roy Rielding에 의해 고안된 아키텍처 스타일이다.
+- Uniform Interface: 모든 rest 아키텍처는 데이터 자원에 접근하고 처리하는 표준화된 방법을 가져야한다. 데이터 자원의 representation(예: JSON vs XML)을 처리하는 방법을 설명하는 self-descriptive messages와 고유한 리소스 식별자(i.e., 고유 URL)가 서버 response에 포함된다. 즉, 자원은 representation과 그 representation을 어떻게 처리하는지 self-descriptive message로 설명된 규칙들로만 접근 가능하다.
+- Stateless: 모든 client request는 독립적이다. server는 후속 request들을 만들기 위하여 어떠한 application data도 저장할 필요가 없다.
+- Client-Server: 아키텍처에는 ciient와 server가 모두 존재해야 한다.
+- Cacheable & Layered System: [캐싱](https://richong.tistory.com/95)과 레이어링(계층화)은 네트워크 효율성을 높여준다.
+
