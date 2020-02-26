@@ -55,3 +55,8 @@ REST는 Representational State Transfer를 의미한다. 2000년에 Roy Rielding
 - Client-Server: 아키텍처에는 ciient와 server가 모두 존재해야 한다.
 - Cacheable & Layered System: [캐싱](https://richong.tistory.com/95)과 레이어링(계층화)은 네트워크 효율성을 높여준다.
 
+### Let's get started!
+![server](/img/server.png)
+지난시간에는 파이썬으로 어떻게 데이터베이스를 설정하고 다루는지에 관해 배웠고 우리는 이제 API server interface에 관해 이야기를 해 볼 것이다.
+중요한 키포인트는 이것은 데이터와 client의 중간에 있는 interface라는 점이다. 그러므로 이것의 역할은 매우 중요하다. 우리의 API는 데이터 무결성을 유지하고 클라이언트와의 커뮤니케이션은 매우 명확해야한다는 것을 명심하라. 만약 API가 잘 구성되고 제대로 문서화되었다면 우리의 data는 
+안전할 것이고 수많은 cilent들과 user들에게 사용될 것이다.
