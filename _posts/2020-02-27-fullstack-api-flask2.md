@@ -77,3 +77,29 @@ def create_app(test_config=None):
 <br>
 
 ![communication](/img/communication.png)
+
+<br>
+
+### Chrome Dev Tools
+요청이 어떻게 전송되고 있는지, 브라우저에서의 응답이 무엇인지 확인하기위해 Chrome Dev Tools를 사용할 수 있다. 그 안에는 수많은 도구가 있지만 사용할 핵심 영역은 네트워크 탭이다.
+
+네트워크 탭에 액세스하려면 개발자 도구(Cmd + Shift + C 또는 햄버거 메뉴 → More Tools(도구 더보기) → Developer Tools(개발자도구))를 열고 네트워크 탭을 선택한다. 개발자 도구를 연 후 발생한 모든 요청들이 이 탭에 나타난다. 웹사이트가 어떻게 작동하고 있는지 훑어볼 수 있다.
+
+![dev1](/img/dev1.png)
+![dev2](/img/dev2.png)
+
+### Curl
+Curl은 URL을 사용하여 데이터의 IP 전송을 완료하는 라이브러리 및 Commnad line tool이다. API를 테스트하기 위한 빠른 방법은 API서버가 실행되는동안 
+다른 터미널 창에서 curl command를 실행하는 것이다.
+
+#### Curl Syntax
+```curl -X POST http://www.example.com/tasks/```
+모든 request는 `curl`과 URL을 포함하고 있어야한다. 그 외의 부분은 request를 만드는데 사용할 수 있는 옵션들을 나타낸다.
+
+|Option|Long form|Example|Description|
+|:----:|:--------:|:----:|:----:|
+-X|--request COMMAND|curl -X POST http://www.example.com|request 메소드나 커맨드를 명시
+-d|--data DATA|curl -d '{"name":"Bob"}' http://www.example.com|백엔드에 필요한 데이터를 전송
+-F|--form CONTENT|curl -X POST -F "name=user" http://www.example.com|form을 submit 해야할때
+-u|--user<br>USER[:PASSWORD]|curl --user bob:secret http://www.example.com|test user와 password로 테스트할때
+-H|--header LINE|curl -H "Content-Type: application/json" http://www.example.com|request에 넣고 싶은 header를 포함시킴
