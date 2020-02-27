@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTTP and Flask Basics
+title: HTTP
 tag: fullstack
 ---
 ### Introduction to HTTP
