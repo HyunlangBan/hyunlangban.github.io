@@ -63,7 +63,7 @@ Accept-Language:en
   - i.e. 만약 인스타그램을 올린다고 하면 이미지를 포함하지 않고 글만 적어서 올린다면 이미지는 사라지고 글은 업데이트 된다.
 - PATCH: Request data로 타겟 리소스의 representation을 일부 변경한다.
   - i.e. 똑같은 인스타그램의 상황에서 이미지를 포함하지 않고 글만 적어서 올렸을 때 이미지는 그대로 유지되고 글만 업데이트된다.
-  - 의도한 부분만 수정할 수 있기 때문에 PATCH보다는 안전한 방법이다.
+  - 의도한 부분만 수정할 수 있기 때문에 PUT보다는 안전한 방법이다.
 - DELETE: URI로 명시된 자원의 모든 representation을 제거한다.
 - OPTIONS: 요청된 자원을 위한 communication option들을 전송한다.
 
