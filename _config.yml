@@ -75,8 +75,13 @@ paginate: 5
 paginate_path: "blog/page:num"
 
 # BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge
+# markdown: kramdown
+# highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+  auto_ids:       true
+  toc_levels:     1..3
 
 sass:
   sass_dir: _sass
