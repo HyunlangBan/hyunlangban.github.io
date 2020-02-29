@@ -25,6 +25,7 @@ project1=# \dt
 
 ### 부족한 개념
 
+#### Association table in many-to-many relationships
 수업에서 many-to-many 관계에서는 두개의 one-to-many relationship이 생긴다고 했었고 중간에 있는 table은 association table로 `db.Model`이 아닌 `db.Table`로 만들어주는 것으로 알고있었다.
 
 하지만 학생들이 남긴 질문들과 답변들을 보니 다른 사람들은 Show를 클래스(`db.Model`)로 선언하여 만들어주고 있었다. 나는 이부분에서 혼란스러웠다. 그럼 Show는 association table이 아닌걸까? 분명히 many-to-many relationship인데 내가 생각을 잘못한걸까하고 계속 고민했다.
