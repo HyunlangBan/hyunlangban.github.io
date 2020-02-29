@@ -24,17 +24,14 @@ project1=# \dt
 <br>
 
 ### 부족한 개념
-#### one to many relationship: 왜 `Show`는 association table이 아닐까?
-- `Artist`와 `Venue`는 many to many relationship이다. 수업에서는 many-to-many relationship에서는 두개의 one-to-many relationships를 만들고 중간을 연결해주는 association table이 필요하다고 했다. 근데 왜 `Artist`와 `Venue`를 연결해주는 `Show`는 association table로 만들지 않고 새로 model을 만들어주는걸까?
 
+수업에서 many-to-many 관계에서는 두개의 one-to-many relationship이 생긴다고 했었고 중간에 있는 table은 association table로 `db.Model`이 아닌 `db.Table`로 만들어주는 것으로 알고있었다.
 
-#### Mandatory, Optional Relationship
-답은 그 관계가 반드시 발생하는 mandatory인지 아니면 관계가 없을 수도 있는 optional인지에 따라 달라지는 것이었다.
-- many-to-many relationships에서 둘 중 하나가 mandatory라면 join을 했을때 null값이 발생하지 않는다.
-  - 예를 들어 주문을 할 때는 무조건 한개 이상의 물건이 담겨야한다. 하지만 물건들 중 모두가 주문이 되야할 필요는 없으며 또한 여러 주문에 담길 수도 있다.
-  - 이 관계에서 join을 하게되면 order_id에 따라 해당되는 product들이 연결될 것이다.
-- 하지만 모든 관계가 optional이라면?
-  - artist는 한개 이상의 venue를 구할수도 있고 안구할 수도 있다 또한 venue도 한팀 이상의 artist를 구할수도 있고 안구할수도 있다.
-  - 이런 상황에서 우리가 한 엔티티의 id를 다른 엔티티의 릴레이션에 저장한다면, 특정 엔티티의 특정 인스턴스에 대한 관계가 존재하지 않기 때문에 id에 대해서 null 값을 가지는 경우가 있다는 것을 의미한다. 하지만 id는 null값을 가질 수 없으므로 **두 엔티티의 관계를 나타내는 세번째 릴레이션**이 따로 필요하다. 그 릴레이션이 바로 `Show`가 되는 것이다.
-- [참고: Entity-Relationship Modelling](https://www.cs.uct.ac.za/mit_notes/database/htmls/chp06.html)
- 
+하지만 학생들이 남긴 질문들과 답변들을 보니 다른 사람들은 Show를 클래스(`db.Model`)로 선언하여 만들어주고 있었다. 나는 이부분에서 혼란스러웠다. 그럼 Show는 association table이 아닌걸까? 분명히 many-to-many relationship인데 내가 생각을 잘못한걸까하고 계속 고민했다.
+
+처음에는 내가 관계를 잘못 생각한거고 Show는 독립적인 테이블이라고 생각했었는데 아무리 생각해도 Show가 중간에 안낄수가 없었다. 그럼 왜 association table을 처음에는 table로 선언하라고 알려주고 프로젝트에서는 model로 선언한걸까 이해가 되지 않았다.
+
+결론은 association table이라고 `db.Table`로만 만들 수 있는게 아니고 `db.Table`, `db.Model` 둘다 사용 가능하다. 
+`db.Table`을 사용하는 것이 좀 더 간단할 뿐이다. `db.Model`로 선언하게 되면 `db.Table`로 선언했을때보다 추가적인 정보들이 담기게되는데 그러한 정보가 필요하다면 `db.Model`로 선언한다. 
+
+참고자료: [db.Model vs db.Table in Flask-SQLAlchemy](https://stackoverflow.com/questions/45044926/db-model-vs-db-table-in-flask-sqlalchemy)
