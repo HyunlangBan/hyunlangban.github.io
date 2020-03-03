@@ -58,3 +58,18 @@ unittest.main()
   - `self.assertEqual`을 사용하여 status code 및 모든 관련 operations를 확인해야 한다.
 - #5. Test suite를 실행한다.
   - 커맨드 라인에서 `python test_file_name.py`를 실행한다.
+  
+ ### TDD(Test-Driven Development) for APIs
+테스트 기반 개발(또는 TDD)은 프로덕션에서 매우 일반적으로 사용되는 소프트웨어 개발 패러다임이다. Executable code 이전에 테스트를 작성하고 지속적으로 반복하는 짧고 빠른 개발 주기에 기반을 두고 있다.
+
+
+![TDD.img](/img/tdd.png)
+
+1. Write test for specific application behavior.
+2. Run the tests and watch them fail.
+3. Write code to execute the required behavior.
+4. Test the code and rewrite as necessary to pass the test
+4. Refactor your code.
+5. Repeat - write your next test.
+
+
