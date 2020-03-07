@@ -11,3 +11,4 @@ title: git 사용법 링크
 - [remote origin 삭제](https://0urtrees.tistory.com/41) 
 - [git add 취소하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)
 - [내 프로젝트를 Github에 업로드하기](https://blog.naver.com/chang0c/221257538835)
+- [프로젝트 로컬저장소로 다운받기](https://webnautes.tistory.com/1387)
