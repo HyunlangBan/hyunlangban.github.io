@@ -4,8 +4,10 @@ title: Project1 오류 & 부족한 개념
 tag: fullstack
 ---
 
-### Proejct1 도중 생긴 오류 정리
-#### 1. Postgresql에서 릴레이션을 찾을 수 없을 때
+### Errors
+---
+### Postgresql에서 릴레이션을 찾을 수 없을 때
+#### 문제상황
 분명 `\dt`를 했을 때
 ```
 project1=# \dt
@@ -17,14 +19,60 @@ project1=# \dt
  public | alembic_version | table | postgres
  ```
  와 같이 나오는데 컬럼들이 잘 들어갔는지 확인하려고 `\d Artist`를 아무리해도 '"Artist" 이름을 릴레이션(relation) 없음.'와 같은 오류만 나오는 것이다.
- 스키마 문제인줄 알았는데 설정을 아무리 바꿔도 안나왔다. <br><br>
+ 스키마 문제인줄 알았는데 설정을 아무리 바꿔도 안나왔다.
+ 
+ #### 해결
  오류가 났던 이유는 바로.. 테이블 이름에 대문자가 있어서였다. 대문자가 있으면 **쌍따옴표 안**에 넣어서 구분을 해주어야한다.
  `\d "Artist"`로 입력했더니 넣어준 칼럼들이 잘 나온다.
- 
+
+
+<br>
+<br>
+
+### 프로젝트 진행중에 파이썬 인터프리터에서 쿼리를 테스트하고 싶을때
+#### 문제상황
+수업에서 했던 예제에서는 프로젝트 폴더로 이동 후 파이썬 인터프리터에서 `from app import db, model_name`를 입력하고 쿼리문을 바로 입력했을 때 결과가 나왔었다. 그래서 이번에도 테스트를 위해 `from app db, Show`를 하고 `Show.query.all()`과 같은 쿼리문을 입력하니 다음과 같은 오류가 나왔다.
+```
+>>> Show.query.all()
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\sqlalchemy\util\_collections.py", line 1010, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x0000021F8DE02438>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask_sqlalchemy\__init__.py", line 519, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\sqlalchemy\orm\scoping.py", line 78, in __call__
+    return self.registry()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\sqlalchemy\util\_collections.py", line 1012, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "C:\ProgramData\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 3213, in __call__
+    return self.class_(**local_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask_sqlalchemy\__init__.py", line 136, in __init__
+    self.app = app = db.get_app()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask_sqlalchemy\__init__.py", line 982, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+```
+그 이유는 이 프로젝트에서는 데이터베이스 연결을 config.py에서 따로 해주는데 이것때문에 프롬프트에서는 데이터베이스와 연결이 되지 않는 것이었다.
+
+#### 해결
+파이썬 인터프리터에서 쿼리문을 사용하기 위해서는 context를 부여해주어야 한다고 한다. 그렇게 하기 위해서는 파이썬 인터프리터에서 `with app.app_context():`를 사용해야한다.
+```
+from app import app, db, Show
+
+with app.app_context():
+   Show.query.all()
+```
+주의할 점은 tab을 사용하면 바로 오류가나기 때문에 띄어쓰기 3번을 해야한다. 
+
 <br>
 
 ### 부족한 개념
-
+---
 #### Association table in many-to-many relationships
 수업에서 many-to-many 관계에서는 두개의 one-to-many relationship이 생긴다고 했었고 중간에 있는 table은 association table로 `db.Model`이 아닌 `db.Table`로 만들어주는 것으로 알고있었다.
 
