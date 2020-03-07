@@ -69,6 +69,9 @@ with app.app_context():
 ```
 주의할 점은 tab을 사용하면 바로 오류가나기 때문에 띄어쓰기 3번을 해야한다. 
 
+
+참고 - [stackoverflow](https://stackoverflow.com/a/53150744)
+
 <br>
 
 ### 부족한 개념
