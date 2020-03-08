@@ -28,6 +28,7 @@ API endpoints를 구성할 때, actions이 아닌 resources에 기반해야한�
 
 #### Methods& Endpoints Review
 주어진 자원의 URI에서 수행되는 오퍼레이션은 사용된 request method에 따라 결정된다고 하였다. API 문서는 수행되는 오퍼레이션과 response를 통해 return되는 데이터를 정확하게 설명해야 하지만 API를 사용하는 모두에게 직관적이어야 한다.
+
 |Resources|GET|POST|PATCH|DELETE|
 |:-------:|:--:|:--:|:---:|:----:|
 /tasks|Get all tasks|Create a new task|Partial update of all tasks| Delete all tasks
