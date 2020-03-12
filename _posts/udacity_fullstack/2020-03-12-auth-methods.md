@@ -41,7 +41,7 @@ API server에서는 사용자가 제출한 password와 db에 저장된 password�
 ### Alternative Authentication Methods
 #### Single Sign-On(SSO)
 
-![sso_img][/img/sso.png]
+![sso](/img/sso.png)
 
 '누가 request를 만들고있는가?'에 대한 질문에 대답하기 위하여 다른 누군가를 신뢰하는 것이다. 
 
@@ -51,8 +51,7 @@ SSO는 많은 이점을 가지고 있다.
 - 이미 로그인된 서비스를 사용해서 인증함으로써 사용자들이 더 쉽게 접근할 수 있도록 한다.
 
 #### Multi-Factor Authentication
-
-![multi-factor-auth][/img/mfa.png]
+![multi-factor-auth](/img/mfa.png)
 
 사용자가 비밀번호를 공유했거나 또는 누군가가 비밀번호를 도용하고 있을수도 있다. Multi-factor authentication은 패스워드의 위에 한 층의 trust를 더 부여하는 것이다. 
 이 인증 방법은 오직 당신만이 물리적 또는 민감하고 안전한 무언가에 접근 할 수 있다고 믿는다. 
