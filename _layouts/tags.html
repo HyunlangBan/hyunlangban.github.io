@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-<p>TIL을 제외하고 새로운 글들은 <a href="https://velog.io/@langssi">velog</a>에 업데이트 하고 있습니다.</p>
+<p>이곳에는 현재 TIL만 업데이트 하고 있으며 그 외의 글은 <a href="https://velog.io/@langssi">velog</a>에 작성하고 있습니다.</p>
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tag_words = site_tags | split:',' | sort %}
 
