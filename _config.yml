@@ -13,7 +13,7 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <h3>You can't change the wind. But you can adjust the sails to reach your destination.</h3>
+     <h3>You can't change the wind.<br> But you can adjust the sails to reach your destination.</h3>
      <p>- Paulo Coelho</p>
   header_text_feature_image:
   footer_text: >
